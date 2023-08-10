@@ -147,7 +147,7 @@ class LeaderboardPage extends StatelessWidget {
                 Column(
                   children: [
                     SizedBox(
-                      height: 36,
+                      height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -176,20 +176,17 @@ class LeaderboardPage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 16,
-            ),
             Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 24),
                 child: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+                  padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
                   decoration: BoxDecoration(
                       color: ThemeColor.lighterPrimary,
-                      borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(20)),
                   child: ListView.separated(
                       separatorBuilder: (BuildContext context, int index) {
-                        return SizedBox(height: 16);
+                        return SizedBox(height: 12);
                       },
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
@@ -209,11 +206,19 @@ class LeaderboardPage extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-          backgroundColor: AppUtils.getRandomColor(),
+          backgroundColor: AppUtils.getRandomAvatarBgColor(),
           radius: 24,
+          child: ClipOval(
+            child: Image.asset(
+              "assets/images/avatar.png",
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         SizedBox(
-          height: 24,
+          height: 16,
         ),
         Text(
           "Ruben Geidt",
@@ -248,13 +253,13 @@ class LeaderboardPage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8, right: 8, bottom: 24),
           child: Container(
             width: double.infinity,
-            padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+            padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
             decoration: BoxDecoration(
                 color: ThemeColor.lighterPrimary,
-                borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(20)),
             child: ListView.separated(
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 16);
+                  return SizedBox(height: 12);
                 },
                 scrollDirection: Axis.vertical,
                 itemCount: 10,
@@ -270,7 +275,7 @@ class LeaderboardPage extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: ThemeColor.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -299,8 +304,16 @@ class LeaderboardPage extends StatelessWidget {
                 width: 16,
               ),
               CircleAvatar(
-                backgroundColor: AppUtils.getRandomColor(),
+                backgroundColor: AppUtils.getRandomAvatarBgColor(),
                 radius: 24,
+                child: ClipOval(
+                  child: Image.asset(
+                    "assets/images/avatar.png",
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               SizedBox(
                 width: 12,

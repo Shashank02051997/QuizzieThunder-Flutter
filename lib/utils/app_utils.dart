@@ -70,12 +70,30 @@ class AppUtils {
     return {"version": version, "buildNumber": buildNumber};
   }
 
-  static Color getRandomColor() {
+  static Color getRandomAvatarBgColor() {
     final List<Color> randomColors = [
       Color(0xffC9F2E9),
       Color(0xffC4D0FB),
       Color(0xffBF83FF),
       Color(0xffFFD6DD),
+    ];
+    final random = Random();
+    return randomColors[random.nextInt(randomColors.length)];
+  }
+
+  static Color getRandomCardBgColor() {
+    final List<Color> randomColors = [
+      Color(0xff8891AA),
+      Color(0xff88E2CE),
+      Color(0xff9087E5),
+      Color(0xffF0A2D4),
+      Color(0xffF7D37A),
+      Color(0xff9DE2B8),
+      Color(0xffF5928B),
+      Color(0xffA6C1E7),
+      Color(0xffFFB478),
+      Color(0xffC9A7C1),
+      Color(0xff6DD7D3)
     ];
     final random = Random();
     return randomColors[random.nextInt(randomColors.length)];
