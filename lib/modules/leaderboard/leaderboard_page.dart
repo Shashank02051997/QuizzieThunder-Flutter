@@ -334,7 +334,7 @@ class LeaderboardPage extends StatelessWidget {
                   ),
                   Text(
                     "1,124 points",
-                    style: TextStyle(fontSize: 14, color: ThemeColor.coolGrey),
+                    style: TextStyle(fontSize: 14, color: ThemeColor.grey_500),
                   ),
                 ],
               )

@@ -27,7 +27,6 @@ class ThemeColor {
   static const Color burgundy = Color(0xff660012);
   static const Color textPrimary = Color(0xff3c4144);
   static const Color textSecondary = Color(0xff8B8C8D);
-  static const Color coolGrey = Color(0xff8891AA);
   static const Color lightCyan = Color(0xff88E2CE);
   static const Color lightPurple = Color(0xff9087E5);
   static const Color lightPink = Color(0xffF0A2D4);

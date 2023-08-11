@@ -8,4 +8,5 @@ class AppRoutes {
   static const newPasswordPage = '/newPasswordPage';
   static const signUpPage = '/signUpPage';
   static const dashboardPage = '/dashboardPage';
+  static const settingsPage = '/settingsPage';
 }

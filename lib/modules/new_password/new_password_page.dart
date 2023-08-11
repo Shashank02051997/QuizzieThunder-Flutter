@@ -44,7 +44,8 @@ class NewPasswordPage extends StatelessWidget {
                   ),
                   Text(
                     "Your new password must be different from the previous used passwords",
-                    style: TextStyle(fontSize: 14, color: ThemeColor.coolGrey),
+                    style: TextStyle(
+                        fontSize: 14, color: ThemeColor.textSecondary),
                   ),
                   SizedBox(
                     height: 24,
