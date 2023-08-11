@@ -6,6 +6,8 @@ import '../modules/forgot_password/forgot_password_binding.dart';
 import '../modules/forgot_password/forgot_password_page.dart';
 import '../modules/new_password/new_password_binding.dart';
 import '../modules/new_password/new_password_page.dart';
+import '../modules/quizzes/quizzes_binding.dart';
+import '../modules/quizzes/quizzes_page.dart';
 import '../modules/settings/settings_binding.dart';
 import '../modules/settings/settings_page.dart';
 import '../modules/signin/signin_binding.dart';
@@ -59,6 +61,11 @@ class AppPages {
       name: AppRoutes.settingsPage,
       page: () => SettingsPage(),
       binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.quizzesPage,
+      page: () => QuizzesPage(),
+      binding: QuizzesBinding(),
     ),
   ];
 }

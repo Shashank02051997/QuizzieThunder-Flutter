@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import '../../utils/app_utils.dart';
 import '../../widgets/quiz_item_container.dart';
@@ -186,7 +187,9 @@ class HomePage extends StatelessWidget {
                                 color: ThemeColor.black),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.toNamed(AppRoutes.quizzesPage);
+                            },
                             child: Text(
                               "See all",
                               style: TextStyle(

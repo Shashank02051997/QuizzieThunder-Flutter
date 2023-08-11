@@ -126,7 +126,7 @@ class SettingsPage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: ThemeColor.black),
+                        color: ThemeColor.textPrimary),
                   ),
                   SizedBox(
                     height: 4,
