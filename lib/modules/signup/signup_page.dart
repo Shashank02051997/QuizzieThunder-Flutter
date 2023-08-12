@@ -52,7 +52,7 @@ class SignupPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Full Name",
+                                  "First Name",
                                   style: TextStyle(
                                       fontSize: 14,
                                       color: ThemeColor.textPrimary,
@@ -63,7 +63,7 @@ class SignupPage extends StatelessWidget {
                                 ),
                                 TextFormField(
                                   controller:
-                                      signupController.fullNameController,
+                                      signupController.firstNameController,
                                   keyboardType: TextInputType.text,
                                   style: TextStyle(
                                       color: ThemeColor.black, fontSize: 14),
@@ -75,7 +75,53 @@ class SignupPage extends StatelessWidget {
                                     contentPadding: EdgeInsets.all(12),
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
-                                    hintText: "Full Name",
+                                    hintText: "First Name",
+                                    hintStyle: TextStyle(
+                                        fontSize: 14,
+                                        color: ThemeColor.grey_500),
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.transparent),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    filled: true,
+                                    fillColor: ThemeColor.white,
+                                  ),
+                                  textInputAction: TextInputAction.next,
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                ),
+                                SizedBox(
+                                  height: 16,
+                                ),
+                                Text(
+                                  "Last Name",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: ThemeColor.textPrimary,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                TextFormField(
+                                  controller:
+                                      signupController.lastNameController,
+                                  keyboardType: TextInputType.text,
+                                  style: TextStyle(
+                                      color: ThemeColor.black, fontSize: 14),
+                                  decoration: InputDecoration(
+                                    prefixIcon: Icon(
+                                      Icons.person_outline,
+                                      size: 18,
+                                    ),
+                                    contentPadding: EdgeInsets.all(12),
+                                    floatingLabelBehavior:
+                                        FloatingLabelBehavior.never,
+                                    hintText: "Last Name",
                                     hintStyle: TextStyle(
                                         fontSize: 14,
                                         color: ThemeColor.grey_500),
@@ -259,7 +305,7 @@ class SignupPage extends StatelessWidget {
                           height: 44,
                           child: ElevatedButton(
                             onPressed: () {
-                              //Get.toNamed(AppRoutes.signInPage);
+                              Get.toNamed(AppRoutes.verifyOtpPage);
                             },
                             child: Text("Register"),
                             style: TextButton.styleFrom(

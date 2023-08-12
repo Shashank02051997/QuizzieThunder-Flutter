@@ -45,8 +45,8 @@ class ForgotPasswordPage extends StatelessWidget {
                   ),
                   Text(
                     "Enter your email and we will send you a link to reset your password",
-                    style: TextStyle(
-                        fontSize: 14, color: ThemeColor.textSecondary),
+                    style:
+                        TextStyle(fontSize: 14, color: ThemeColor.textPrimary),
                   ),
                   SizedBox(
                     height: 24,

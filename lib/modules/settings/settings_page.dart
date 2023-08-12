@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import 'settings_controller.dart';
 
@@ -28,7 +29,7 @@ class SettingsPage extends StatelessWidget {
                 color: ThemeColor.black),
           ),
           backgroundColor: Colors.transparent,
-          centerTitle: true,
+          centerTitle: false,
           elevation: 0,
         ),
         backgroundColor: ThemeColor.white,
@@ -47,8 +48,15 @@ class SettingsPage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                settingsInfoContainer(Icons.person_outline_rounded,
-                    "Update Profile", "Update fullname, avatar, etc"),
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.updateProfilePage);
+                  },
+                  child: settingsInfoContainer(
+                      Icons.person_outline_rounded,
+                      "Update Profile",
+                      "Update first name, last name, avatar etc"),
+                ),
                 SizedBox(
                   height: 12,
                 ),
@@ -107,11 +115,11 @@ class SettingsPage extends StatelessWidget {
             children: [
               CircleAvatar(
                 backgroundColor: ThemeColor.white,
-                radius: 20,
+                radius: 18,
                 child: Icon(
                   icon,
                   color: ThemeColor.primaryDark,
-                  size: 24,
+                  size: 22,
                 ),
               ),
               SizedBox(
@@ -123,10 +131,7 @@ class SettingsPage extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: ThemeColor.textPrimary),
+                    style: TextStyle(fontSize: 16, color: ThemeColor.black),
                   ),
                   SizedBox(
                     height: 4,
@@ -134,7 +139,7 @@ class SettingsPage extends StatelessWidget {
                   Text(
                     subTitle,
                     style: TextStyle(
-                        fontSize: 14, color: ThemeColor.textSecondary),
+                        fontSize: 12, color: ThemeColor.textSecondary),
                   ),
                 ],
               )

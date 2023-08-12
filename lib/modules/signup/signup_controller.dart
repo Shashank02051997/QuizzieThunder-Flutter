@@ -5,7 +5,8 @@ class SignupController extends GetxController {
   final GlobalKey<FormState> signupFormKey =
       GlobalKey<FormState>(debugLabel: '__signupFormKey__');
 
-  final fullNameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final emailController = TextEditingController();
   final mobileController = TextEditingController();
   final passwordController = TextEditingController();

@@ -16,6 +16,10 @@ import '../modules/signup/signup_binding.dart';
 import '../modules/signup/signup_page.dart';
 import '../modules/splash/splash_binding.dart';
 import '../modules/splash/splash_page.dart';
+import '../modules/update_profile/update_profile_binding.dart';
+import '../modules/update_profile/update_profile_page.dart';
+import '../modules/verify_otp/verify_otp_binding.dart';
+import '../modules/verify_otp/verify_otp_page.dart';
 import '../modules/welcome/welcome_binding.dart';
 import '../modules/welcome/welcome_page.dart';
 import 'app_routes.dart';
@@ -53,6 +57,11 @@ class AppPages {
       binding: SignupBinding(),
     ),
     GetPage(
+      name: AppRoutes.verifyOtpPage,
+      page: () => VerifyOtpPage(),
+      binding: VerifyOtpBinding(),
+    ),
+    GetPage(
       name: AppRoutes.dashboardPage,
       page: () => DashboardPage(),
       binding: DashboardBinding(),
@@ -66,6 +75,11 @@ class AppPages {
       name: AppRoutes.quizzesPage,
       page: () => QuizzesPage(),
       binding: QuizzesBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.updateProfilePage,
+      page: () => UpdateProfilePage(),
+      binding: UpdateProfileBinding(),
     ),
   ];
 }
