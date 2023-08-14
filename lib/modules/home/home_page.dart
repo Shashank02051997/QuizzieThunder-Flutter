@@ -209,7 +209,11 @@ class HomePage extends StatelessWidget {
                           scrollDirection: Axis.vertical,
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return QuizItemContainer();
+                            return InkWell(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.quizDetailPage);
+                                },
+                                child: QuizItemContainer());
                           }),
                     ],
                   ),

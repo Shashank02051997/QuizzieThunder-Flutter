@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import '../../widgets/quiz_item_container.dart';
 import 'quizzes_controller.dart';
@@ -51,7 +52,11 @@ class QuizzesPage extends StatelessWidget {
                 itemCount: 10,
                 padding: const EdgeInsets.only(top: 16, bottom: 24),
                 itemBuilder: (context, index) {
-                  return QuizItemContainer();
+                  return InkWell(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.quizDetailPage);
+                      },
+                      child: QuizItemContainer());
                 }),
           ),
         ));

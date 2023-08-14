@@ -29,7 +29,7 @@ class ThemeColor {
   static const Color textSecondary = Color(0xff8B8C8D);
   static const Color lightCyan = Color(0xff88E2CE);
   static const Color lightPurple = Color(0xff9087E5);
-  static const Color lightPink = Color(0xffF0A2D4);
+  static const Color lightPink = Color(0xffff8fa2);
   static const Color lightYellow = Color(0xffF7D37A);
   static const Color lightMint = Color(0xff9DE2B8);
   static const Color lightSalmon = Color(0xffF5928B);

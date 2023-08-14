@@ -11,4 +11,7 @@ class AppRoutes {
   static const settingsPage = '/settingsPage';
   static const quizzesPage = '/quizzesPage';
   static const updateProfilePage = '/updateProfilePage';
+  static const quizDetailPage = '/quizDetailPage';
+  static const quizResultPage = '/quizResultPage';
+  static const quizQuestionPage = '/quizQuestionPage';
 }

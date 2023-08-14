@@ -6,6 +6,12 @@ import '../modules/forgot_password/forgot_password_binding.dart';
 import '../modules/forgot_password/forgot_password_page.dart';
 import '../modules/new_password/new_password_binding.dart';
 import '../modules/new_password/new_password_page.dart';
+import '../modules/quiz_detail/quiz_detail_binding.dart';
+import '../modules/quiz_detail/quiz_detail_page.dart';
+import '../modules/quiz_question/quiz_question_binding.dart';
+import '../modules/quiz_question/quiz_question_page.dart';
+import '../modules/quiz_result/quiz_result_binding.dart';
+import '../modules/quiz_result/quiz_result_page.dart';
 import '../modules/quizzes/quizzes_binding.dart';
 import '../modules/quizzes/quizzes_page.dart';
 import '../modules/settings/settings_binding.dart';
@@ -80,6 +86,21 @@ class AppPages {
       name: AppRoutes.updateProfilePage,
       page: () => UpdateProfilePage(),
       binding: UpdateProfileBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.quizDetailPage,
+      page: () => QuizDetailPage(),
+      binding: QuizDetailBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.quizResultPage,
+      page: () => QuizResultPage(),
+      binding: QuizResultBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.quizQuestionPage,
+      page: () => QuizQuestionPage(),
+      binding: QuizQuestionBinding(),
     ),
   ];
 }

@@ -197,10 +197,13 @@ class ProfilePage extends StatelessWidget {
                         ),
                         if (profileController.selectedTabIndex.value == 0)
                           badgeSection()
-                        else if (profileController.selectedTabIndex.value == 0)
-                          Container()
+                        else if (profileController.selectedTabIndex.value == 1)
+                          statsSection()
                         else
-                          Container()
+                          detailSection(),
+                        SizedBox(
+                          height: 64,
+                        ),
                       ],
                     )),
                   ),
@@ -224,6 +227,171 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ));
+  }
+
+  Container detailSection() {
+    return Container(
+      width: double.infinity,
+      child: Text(
+        "Please note that the availability of icons might change over time with updates to Flutter and its libraries. I recommend checking the Flutter documentation or relevant resources for the most up-to-date information on available icons and their usage.",
+        textAlign: TextAlign.left,
+        style: TextStyle(color: ThemeColor.black, fontSize: 16),
+      ),
+    );
+  }
+
+  Stack statsSection() {
+    return Stack(children: [
+      Image.asset(
+        "assets/images/stats_bg.png",
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+      Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 64,
+            ),
+            RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    children: [
+                      TextSpan(
+                        text: "You have played a total ",
+                        style: TextStyle(
+                          color: ThemeColor.black,
+                        ),
+                      ),
+                      TextSpan(
+                          text: "24 quizzes ",
+                          style: TextStyle(
+                              color: ThemeColor.accent,
+                              fontWeight: FontWeight.bold)),
+                      TextSpan(
+                          text: "this month",
+                          style: TextStyle(
+                              color: ThemeColor.black,
+                              fontWeight: FontWeight.bold)),
+                    ])),
+            SizedBox(
+              height: 36,
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 120,
+                  height: 120,
+                  child: CircularProgressIndicator(
+                    value: 0.6,
+                    color: ThemeColor.primaryDark,
+                    backgroundColor: ThemeColor.white,
+                    strokeWidth: 10,
+                  ),
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "37",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: ThemeColor.black,
+                      ),
+                    ),
+                    Text(
+                      "quiz played",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: ThemeColor.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 44,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                    child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: ThemeColor.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "5",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: ThemeColor.black,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Quiz Created",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: ThemeColor.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+                SizedBox(
+                  width: 16,
+                ),
+                Expanded(
+                    child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: ThemeColor.accent,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "5",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: ThemeColor.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Quiz Created",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: ThemeColor.white,
+                          ),
+                        ),
+                      ]),
+                ))
+              ],
+            )
+          ],
+        ),
+      )
+    ]);
   }
 
   GridView badgeSection() {
