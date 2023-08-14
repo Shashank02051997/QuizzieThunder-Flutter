@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import '../../utils/app_utils.dart';
 import 'discover_controller.dart';
@@ -188,36 +189,41 @@ class DiscoverPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               elevation: 2,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.science_outlined,
-                                    size: 36,
-                                    color: ThemeColor.white,
-                                  ),
-                                  SizedBox(
-                                    height: 16,
-                                  ),
-                                  Text(
-                                    "Science",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: ThemeColor.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 4,
-                                  ),
-                                  Text(
-                                    "21 Quizzes",
-                                    style: TextStyle(
-                                      fontSize: 12,
+                              child: InkWell(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.quizzesPage);
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.science_outlined,
+                                      size: 36,
                                       color: ThemeColor.white,
                                     ),
-                                  )
-                                ],
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                    Text(
+                                      "Science",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: ThemeColor.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text(
+                                      "21 Quizzes",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: ThemeColor.white,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ));
                         },
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

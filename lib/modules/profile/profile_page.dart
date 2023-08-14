@@ -195,23 +195,12 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(
                           height: 16,
                         ),
-                        GridView.builder(
-                          itemCount: 6,
-                          padding: const EdgeInsets.all(12),
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return Image.asset(
-                              "assets/images/lock_badge.png",
-                            );
-                          },
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            crossAxisSpacing: 32,
-                            mainAxisSpacing: 16,
-                          ),
-                        )
+                        if (profileController.selectedTabIndex.value == 0)
+                          badgeSection()
+                        else if (profileController.selectedTabIndex.value == 0)
+                          Container()
+                        else
+                          Container()
                       ],
                     )),
                   ),
@@ -235,6 +224,25 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ));
+  }
+
+  GridView badgeSection() {
+    return GridView.builder(
+      itemCount: 6,
+      padding: const EdgeInsets.all(12),
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        return Image.asset(
+          "assets/images/lock_badge.png",
+        );
+      },
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 32,
+        mainAxisSpacing: 16,
+      ),
+    );
   }
 
   Column userInfoBlock(IconData icon, String title, String subTitle) {

@@ -65,8 +65,13 @@ class SettingsPage extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                settingsInfoContainer(Icons.lock_outline_rounded,
-                    "Change Password", "Last changed 1 month ago"),
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.newPasswordPage);
+                  },
+                  child: settingsInfoContainer(Icons.lock_outline_rounded,
+                      "Change Password", "Last changed 1 month ago"),
+                ),
                 SizedBox(
                   height: 24,
                 ),
