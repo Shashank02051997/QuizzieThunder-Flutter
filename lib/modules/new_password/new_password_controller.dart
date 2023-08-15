@@ -36,7 +36,7 @@ class NewPasswordController extends GetxController {
     } else if (confirmPasswordController.text.isEmpty) {
       errorMessage = "Confirm password should not be empty";
       return false;
-    } else if (passwordController.text == confirmPasswordController.text) {
+    } else if (passwordController.text != confirmPasswordController.text) {
       errorMessage = "Password and Confirm password not matched";
       return false;
     } else {
@@ -54,7 +54,7 @@ class NewPasswordController extends GetxController {
           resetPasswordPostBodyModel: resetPasswordPostBodyModel);
       if (response.code == 200) {
         isLoading.value = false;
-        Get.offAndToNamed(AppRoutes.signInPage);
+        Get.offAllNamed(AppRoutes.signInPage);
         AppUtils.showSnackBar(
             response.message ?? "Password updated successfully. Please login",
             status: MessageStatus.SUCCESS);

@@ -1,4 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {}
+import '../../utils/app_utils.dart';
+
+class HomeController extends GetxController {
+  var fullName = "".obs;
+
+  @override
+  void onInit() {
+    fullName.value =
+        "${AppUtils.loginUserDetail().result?.firstname} ${AppUtils.loginUserDetail().result?.lastname}";
+    super.onInit();
+  }
+}

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
+import '../../utils/constants.dart';
 import 'settings_controller.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -67,7 +68,9 @@ class SettingsPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.newPasswordPage);
+                    Get.toNamed(AppRoutes.newPasswordPage, arguments: {
+                      ARG_PHONE_NUMBER: settingsController.phoneNumber
+                    });
                   },
                   child: settingsInfoContainer(Icons.lock_outline_rounded,
                       "Change Password", "Last changed 1 month ago"),

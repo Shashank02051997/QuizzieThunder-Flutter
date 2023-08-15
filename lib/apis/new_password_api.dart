@@ -6,7 +6,7 @@ class ResetPasswordApi {
   Future<ResetPasswordResponseModel> resetPassword(
       {required ResetPasswordPostBodyModel resetPasswordPostBodyModel}) async {
     try {
-      final response = await DioClient.getDioInstance().post(
+      final response = await DioClient.getDioInstance().put(
           "api/user/reset-password",
           data: resetPasswordPostBodyModel.toJson());
       return ResetPasswordResponseModel.fromJson(response.data);

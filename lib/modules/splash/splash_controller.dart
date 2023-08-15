@@ -23,7 +23,7 @@ class SplashController extends GetxController {
         Duration(seconds: 3),
         () => localStorage.read(KEY_USER_DATA) == null
             ? Get.offNamed(AppRoutes.welcomePage)
-            : Get.offNamed(AppRoutes.signInPage));
+            : Get.offNamed(AppRoutes.dashboardPage));
     super.onReady();
   }
 

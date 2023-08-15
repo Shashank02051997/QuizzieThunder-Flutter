@@ -54,6 +54,7 @@ class SigninController extends GetxController {
         isLoading.value = false;
         Get.offAllNamed(AppRoutes.dashboardPage);
       } else if (response.code == 210) {
+        isLoading.value = false;
         Get.toNamed(AppRoutes.verifyOtpPage,
             arguments: {ARG_PHONE_NUMBER: phoneNumberController.text});
       } else {

@@ -1,4 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SettingsController extends GetxController {}
+import '../../utils/app_utils.dart';
+
+class SettingsController extends GetxController {
+  var phoneNumber = "";
+
+  @override
+  void onInit() {
+    phoneNumber = AppUtils.loginUserDetail().result?.mobile ?? "";
+    super.onInit();
+  }
+}

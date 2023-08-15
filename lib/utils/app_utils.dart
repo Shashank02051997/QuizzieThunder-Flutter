@@ -104,4 +104,15 @@ class AppUtils {
     await GetStorage().remove(KEY_USER_DATA);
     Get.offAllNamed(AppRoutes.signInPage);
   }
+
+  static String getGreeting() {
+    var now = DateTime.now();
+    if (now.hour >= 0 && now.hour < 12) {
+      return "GOOD MORNING";
+    } else if (now.hour >= 12 && now.hour < 17) {
+      return "GOOD AFTERNOON";
+    } else {
+      return "GOOD EVENING";
+    }
+  }
 }
