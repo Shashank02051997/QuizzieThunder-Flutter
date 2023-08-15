@@ -1,5 +1,6 @@
 // Commonly used Arguments
 const ARG_PHONE_NUMBER = "arg_phone_number";
+const ARG_QUIZ_DETAIL = "arg_quiz_detail";
 
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";

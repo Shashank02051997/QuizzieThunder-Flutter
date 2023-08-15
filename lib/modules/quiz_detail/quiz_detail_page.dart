@@ -51,7 +51,7 @@ class QuizDetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "SPORTS",
+                          "${quizDetailController.quizDetail?.category?.title.toString().toUpperCase()}",
                           style: TextStyle(
                               color: ThemeColor.grey_500,
                               fontSize: 14,
@@ -61,7 +61,7 @@ class QuizDetailPage extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          "Basic Trivia Quiz",
+                          "${quizDetailController.quizDetail?.title}",
                           style: TextStyle(
                               color: ThemeColor.black,
                               fontSize: 18,
@@ -158,7 +158,7 @@ class QuizDetailPage extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          "Any time is a good time for a quiz and even better if that happens to be a football themed quiz!",
+                          "${quizDetailController.quizDetail?.description}",
                           style: TextStyle(
                             color: ThemeColor.black,
                             fontSize: 16,

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
+import '../../utils/app_utils.dart';
 import '../../utils/constants.dart';
 import 'settings_controller.dart';
 
@@ -93,12 +94,17 @@ class SettingsPage extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: Text(
-                    "Logout",
-                    style: TextStyle(
-                        color: ThemeColor.lightRed,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
+                  child: InkWell(
+                    onTap: () {
+                      AppUtils.logout();
+                    },
+                    child: Text(
+                      "Logout",
+                      style: TextStyle(
+                          color: ThemeColor.lightRed,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 )
               ],

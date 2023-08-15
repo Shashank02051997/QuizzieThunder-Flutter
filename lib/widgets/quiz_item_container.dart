@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../theme/colors_theme.dart';
+import '../models/all_quiz_response_model.dart';
 
 class QuizItemContainer extends StatelessWidget {
+  final Quiz? dataObj;
+
   const QuizItemContainer({
-    super.key,
-  });
+    Key? key,
+    required this.dataObj,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class QuizItemContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Statistics Math Quiz",
+                  Text("${dataObj?.title}",
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -33,7 +36,7 @@ class QuizItemContainer extends StatelessWidget {
                   SizedBox(
                     height: 4,
                   ),
-                  Text("Math - 12 Questions",
+                  Text("${dataObj?.category?.title} - 10 Questions",
                       style: TextStyle(fontSize: 12, color: ThemeColor.grey))
                 ],
               )
