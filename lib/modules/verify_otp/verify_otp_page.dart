@@ -46,7 +46,7 @@ class VerifyOtpPage extends StatelessWidget {
                             height: 44,
                           ),
                           Text(
-                            "We have sent the OTP verification code to your mobile number. Check your mobile number and enter the code below",
+                            "We have sent the OTP verification code to your mobile number (+91-${verifyOtpController.phoneNumber.value}). Check your mobile number and enter the code below",
                             style: TextStyle(
                                 fontSize: 14, color: ThemeColor.textPrimary),
                           ),
@@ -70,6 +70,12 @@ class VerifyOtpPage extends StatelessWidget {
                                     verifyOtpController
                                         .fourthOtpDigitController,
                                     verifyOtpController.fourthFocusNode),
+                                otpInputField(
+                                    verifyOtpController.fifthOtpDigitController,
+                                    verifyOtpController.fifthFocusNode),
+                                otpInputField(
+                                    verifyOtpController.sixthOtpDigitController,
+                                    verifyOtpController.sixthFocusNode),
                               ]),
                           SizedBox(
                             height: 44,
@@ -79,7 +85,7 @@ class VerifyOtpPage extends StatelessWidget {
                               height: 44,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Get.toNamed(AppRoutes.signInPage);
+                                  verifyOtpController.verifyOtp();
                                 },
                                 child: Text("Confirm"),
                                 style: TextButton.styleFrom(
@@ -97,13 +103,13 @@ class VerifyOtpPage extends StatelessWidget {
   Container otpInputField(
       TextEditingController controller, FocusNode focusNode) {
     return Container(
-      width: 60,
+      width: 44,
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
         keyboardType: TextInputType.number,
         style: TextStyle(
-            color: ThemeColor.black, fontSize: 24, fontWeight: FontWeight.bold),
+            color: ThemeColor.black, fontSize: 20, fontWeight: FontWeight.bold),
         maxLength: 1,
         maxLines: 1,
         textAlign: TextAlign.center,
@@ -115,7 +121,7 @@ class VerifyOtpPage extends StatelessWidget {
         },
         decoration: InputDecoration(
           counterText: '',
-          contentPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 16),
+          contentPadding: EdgeInsets.all(4),
           floatingLabelBehavior: FloatingLabelBehavior.never,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           enabledBorder: OutlineInputBorder(

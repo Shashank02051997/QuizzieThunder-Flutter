@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import 'signup_controller.dart';
 
@@ -199,7 +198,8 @@ class SignupPage extends StatelessWidget {
                                   height: 8,
                                 ),
                                 TextFormField(
-                                  controller: signupController.mobileController,
+                                  controller:
+                                      signupController.phoneNumberController,
                                   keyboardType: TextInputType.phone,
                                   style: TextStyle(
                                       color: ThemeColor.black, fontSize: 14),
@@ -305,7 +305,7 @@ class SignupPage extends StatelessWidget {
                           height: 44,
                           child: ElevatedButton(
                             onPressed: () {
-                              Get.toNamed(AppRoutes.verifyOtpPage);
+                              signupController.signUp();
                             },
                             child: Text("Register"),
                             style: TextButton.styleFrom(

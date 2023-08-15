@@ -7,6 +7,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../models/signin_response_model.dart';
+import '../routes/app_routes.dart';
 import '../theme/colors_theme.dart';
 import 'constants.dart';
 import 'enums/snackbar_status.dart';
@@ -97,5 +98,10 @@ class AppUtils {
     ];
     final random = Random();
     return randomColors[random.nextInt(randomColors.length)];
+  }
+
+  static void logout() async {
+    await GetStorage().remove(KEY_USER_DATA);
+    Get.offAllNamed(AppRoutes.signInPage);
   }
 }

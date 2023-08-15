@@ -169,7 +169,7 @@ class SigninPage extends StatelessWidget {
                           height: 44,
                           child: ElevatedButton(
                             onPressed: () {
-                              Get.offAllNamed(AppRoutes.dashboardPage);
+                              signinController.login();
                             },
                             child: Text("Login"),
                             style: TextButton.styleFrom(

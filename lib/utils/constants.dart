@@ -1,5 +1,5 @@
 // Commonly used Arguments
-const ARG_LEAD_DETAIL = "arg_lead_detail";
+const ARG_PHONE_NUMBER = "arg_phone_number";
 
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";
