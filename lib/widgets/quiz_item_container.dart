@@ -1,4 +1,3 @@
-import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/colors_theme.dart';
@@ -38,7 +37,7 @@ class QuizItemContainer extends StatelessWidget {
                     height: 4,
                   ),
                   Text(
-                      quizCategoryName.isNullOrEmpty
+                      quizCategoryName?.isEmpty == true
                           ? "${dataObj?.category?.title} - 10 Questions"
                           : "$quizCategoryName - 10 Questions",
                       style: TextStyle(fontSize: 12, color: ThemeColor.grey))

@@ -7,10 +7,14 @@ class QuizDetailController extends GetxController {
   final arguments = Get.arguments;
 
   Quiz? quizDetail;
+  var quizCategoryName = "";
 
   @override
   void onInit() {
-    if (arguments != null) quizDetail = arguments[ARG_QUIZ_DETAIL];
+    if (arguments != null) {
+      quizDetail = arguments[ARG_QUIZ_DETAIL];
+      quizCategoryName = arguments[ARG_QUIZ_CATEGORY_NAME] ?? "";
+    }
     super.onInit();
   }
 }

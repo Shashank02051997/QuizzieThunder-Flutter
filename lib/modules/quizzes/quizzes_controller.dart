@@ -1,4 +1,3 @@
-import 'package:dartx/dartx.dart';
 import 'package:get/get.dart';
 
 import '../../apis/quizzes_api.dart';
@@ -24,7 +23,7 @@ class QuizzesController extends GetxController {
       quizCategoryId = arguments[ARG_QUIZ_CATEGORY_ID] ?? "";
       quizCategoryName = arguments[ARG_QUIZ_CATEGORY_NAME] ?? "";
     }
-    if (quizCategoryId.isNullOrEmpty)
+    if (quizCategoryId.isEmpty)
       getAllQuizList();
     else
       getAllQuizOfSpeacificCategory();

@@ -52,7 +52,9 @@ class QuizDetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "${quizDetailController.quizDetail?.category?.title.toString().toUpperCase()}",
+                          quizDetailController.quizCategoryName.isEmpty
+                              ? "${quizDetailController.quizDetail?.category?.title.toString().toUpperCase()}"
+                              : quizDetailController.quizCategoryName,
                           style: TextStyle(
                               color: ThemeColor.grey_500,
                               fontSize: 14,

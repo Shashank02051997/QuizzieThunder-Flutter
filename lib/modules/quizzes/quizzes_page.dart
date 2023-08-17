@@ -1,4 +1,3 @@
-import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +24,7 @@ class QuizzesPage extends StatelessWidget {
                 color: ThemeColor.white,
               )),
           title: Text(
-            quizzesController.quizCategoryName.isNullOrEmpty
+            quizzesController.quizCategoryName.isEmpty
                 ? "Quizzes"
                 : "${quizzesController.quizCategoryName} Quizzes",
             style: TextStyle(
@@ -65,15 +64,17 @@ class QuizzesPage extends StatelessWidget {
                             onTap: () {
                               Get.toNamed(AppRoutes.quizDetailPage, arguments: {
                                 ARG_QUIZ_DETAIL:
-                                    quizzesController.allQuizzes[index]
+                                    quizzesController.allQuizzes[index],
+                                ARG_QUIZ_CATEGORY_NAME:
+                                    quizzesController.quizCategoryName
                               });
                             },
                             child: QuizItemContainer(
                               dataObj: quizzesController.allQuizzes[index],
-                              quizCategoryName: quizzesController
-                                      .quizCategoryName.isNullOrEmpty
-                                  ? ""
-                                  : "${quizzesController.quizCategoryName}",
+                              quizCategoryName:
+                                  quizzesController.quizCategoryName.isEmpty
+                                      ? ""
+                                      : "${quizzesController.quizCategoryName}",
                             ));
                       }),
                 ),
