@@ -196,7 +196,7 @@ class DiscoverPage extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "Brandon Matrovs",
+                                                "${discoverController.discoverScreenResponseModel?.weekTopRank?.user?.firstname} ${discoverController.discoverScreenResponseModel?.weekTopRank?.user?.lastname}",
                                                 style: TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.bold,
@@ -206,7 +206,7 @@ class DiscoverPage extends StatelessWidget {
                                                 height: 4,
                                               ),
                                               Text(
-                                                "124 points",
+                                                "${discoverController.discoverScreenResponseModel?.weekTopRank?.points} points",
                                                 style: TextStyle(
                                                     fontSize: 14,
                                                     color: ThemeColor.white),
@@ -256,9 +256,11 @@ class DiscoverPage extends StatelessWidget {
                                                       .discoverScreenResponseModel
                                                       ?.quizCategories?[index]
                                                       .id,
-                                                      ARG_QUIZ_CATEGORY_NAME: discoverController
+                                              ARG_QUIZ_CATEGORY_NAME:
+                                                  discoverController
                                                       .discoverScreenResponseModel
-                                                      ?.quizCategories?[index].title
+                                                      ?.quizCategories?[index]
+                                                      .title
                                             });
                                       },
                                       child: Column(

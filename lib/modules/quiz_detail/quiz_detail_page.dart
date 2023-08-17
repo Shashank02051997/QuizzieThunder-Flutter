@@ -54,7 +54,9 @@ class QuizDetailPage extends StatelessWidget {
                         Text(
                           quizDetailController.quizCategoryName.isEmpty
                               ? "${quizDetailController.quizDetail?.category?.title.toString().toUpperCase()}"
-                              : quizDetailController.quizCategoryName,
+                              : quizDetailController.quizCategoryName
+                                  .toString()
+                                  .toUpperCase(),
                           style: TextStyle(
                               color: ThemeColor.grey_500,
                               fontSize: 14,
