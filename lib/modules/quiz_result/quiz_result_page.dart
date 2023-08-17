@@ -35,140 +35,143 @@ class QuizResultPage extends StatelessWidget {
           elevation: 0,
         ),
         backgroundColor: ThemeColor.white,
-        body: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                      color: ThemeColor.lightPink,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        "assets/images/prize.png",
-                        width: 200,
-                        height: 200,
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      Text(
-                        "You get +80 Quiz Points",
-                        style: TextStyle(
-                            color: ThemeColor.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 44,
-                ),
-                Row(
+        body: Obx(() => quizResultController.isLoading.value
+            ? const Center(child: CircularProgressIndicator())
+            : Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
                   children: [
-                    Expanded(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("CORRECT ANSWER",
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                          color: ThemeColor.lightPink,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            "assets/images/prize.png",
+                            width: 200,
+                            height: 200,
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Text(
+                            "You get +${quizResultController.correctAnswerCount * 10} Quiz Points",
                             style: TextStyle(
-                                color: ThemeColor.grey_500,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text("7 Questions",
-                            style: TextStyle(
-                                color: ThemeColor.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    )),
-                    SizedBox(
-                      width: 16,
+                                color: ThemeColor.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                        ],
+                      ),
                     ),
-                    Expanded(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("COMPLETION",
-                            style: TextStyle(
-                                color: ThemeColor.grey_500,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text("80%",
-                            style: TextStyle(
-                                color: ThemeColor.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ))
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("SKIPPED",
-                            style: TextStyle(
-                                color: ThemeColor.grey_500,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text("2",
-                            style: TextStyle(
-                                color: ThemeColor.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    )),
                     SizedBox(
-                      width: 20,
+                      height: 44,
                     ),
-                    Expanded(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
-                        Text("INCORRECT ANSWER",
-                            style: TextStyle(
-                                color: ThemeColor.grey_500,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold)),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("CORRECT ANSWER",
+                                style: TextStyle(
+                                    color: ThemeColor.grey_500,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                                "${quizResultController.correctAnswerCount} Questions",
+                                style: TextStyle(
+                                    color: ThemeColor.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
                         SizedBox(
-                          height: 8,
+                          width: 16,
                         ),
-                        Text("1",
-                            style: TextStyle(
-                                color: ThemeColor.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("COMPLETION",
+                                style: TextStyle(
+                                    color: ThemeColor.grey_500,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text("80%",
+                                style: TextStyle(
+                                    color: ThemeColor.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ))
                       ],
-                    ))
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("SKIPPED",
+                                style: TextStyle(
+                                    color: ThemeColor.grey_500,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text("${quizResultController.skipQuestionCount}",
+                                style: TextStyle(
+                                    color: ThemeColor.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        )),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("INCORRECT ANSWER",
+                                style: TextStyle(
+                                    color: ThemeColor.grey_500,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text("${quizResultController.incorrectAnswerCount}",
+                                style: TextStyle(
+                                    color: ThemeColor.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ))
+                      ],
+                    )
                   ],
-                )
-              ],
-            )));
+                ))));
   }
 }

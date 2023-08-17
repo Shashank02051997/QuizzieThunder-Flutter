@@ -1,32 +1,71 @@
-class AllQuizResponseModel {
-  AllQuizResponseModel({
+class QuizQuestionResponseModel {
+  QuizQuestionResponseModel({
     required this.code,
     required this.status,
-    required this.count,
-    required this.quizzes,
+    required this.quiz,
+    required this.questions,
   });
 
   final int? code;
   final bool? status;
-  final int? count;
-  final List<Quiz>? quizzes;
+  final Quiz? quiz;
+  final List<Question>? questions;
 
-  factory AllQuizResponseModel.fromJson(Map<String, dynamic> json) {
-    return AllQuizResponseModel(
+  factory QuizQuestionResponseModel.fromJson(Map<String, dynamic> json) {
+    return QuizQuestionResponseModel(
       code: json["code"],
       status: json["status"],
-      count: json["count"],
-      quizzes: json["quizzes"] == null
+      quiz: json["quiz"] == null ? null : Quiz.fromJson(json["quiz"]),
+      questions: json["questions"] == null
           ? []
-          : List<Quiz>.from(json["quizzes"]!.map((x) => Quiz.fromJson(x))),
+          : List<Question>.from(
+              json["questions"]!.map((x) => Question.fromJson(x))),
     );
   }
 
   Map<String, dynamic> toJson() => {
-        "code": code,
-        "status": status,
-        "count": count,
-        "quizzes": quizzes?.map((x) => x.toJson()).toList(),
+        "quiz": quiz?.toJson(),
+        "questions": questions?.map((x) => x.toJson()).toList(),
+      };
+}
+
+class Question {
+  Question({
+    required this.id,
+    required this.question,
+    required this.options,
+    required this.correctOptionIndex,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  final String? id;
+  final String? question;
+  final List<String> options;
+  final int? correctOptionIndex;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+
+  factory Question.fromJson(Map<String, dynamic> json) {
+    return Question(
+      id: json["_id"],
+      question: json["question"],
+      options: json["options"] == null
+          ? []
+          : List<String>.from(json["options"]!.map((x) => x)),
+      correctOptionIndex: json["correctOptionIndex"],
+      createdAt: DateTime.tryParse(json["createdAt"] ?? ""),
+      updatedAt: DateTime.tryParse(json["updatedAt"] ?? ""),
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        "_id": id,
+        "question": question,
+        "options": options.map((x) => x).toList(),
+        "correctOptionIndex": correctOptionIndex,
+        "createdAt": createdAt?.toIso8601String(),
+        "updatedAt": updatedAt?.toIso8601String(),
       };
 }
 
@@ -35,7 +74,7 @@ class Quiz {
     required this.id,
     required this.title,
     required this.description,
-    this.category,
+    required this.category,
     required this.createdAt,
     required this.updatedAt,
   });

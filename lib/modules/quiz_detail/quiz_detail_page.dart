@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quizzie_thunder/utils/constants.dart';
 
 import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
@@ -172,7 +173,11 @@ class QuizDetailPage extends StatelessWidget {
                             height: 44,
                             child: ElevatedButton(
                               onPressed: () {
-                                Get.toNamed(AppRoutes.quizQuestionPage);
+                                Get.toNamed(AppRoutes.quizQuestionPage,
+                                    arguments: {
+                                      ARG_QUIZ_ID:
+                                          quizDetailController.quizDetail?.id
+                                    });
                               },
                               child: Text("Start Quiz"),
                               style: TextButton.styleFrom(

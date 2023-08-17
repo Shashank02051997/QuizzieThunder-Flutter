@@ -1,3 +1,4 @@
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/colors_theme.dart';
@@ -5,11 +6,11 @@ import '../models/all_quiz_response_model.dart';
 
 class QuizItemContainer extends StatelessWidget {
   final Quiz? dataObj;
+  final String? quizCategoryName;
 
-  const QuizItemContainer({
-    Key? key,
-    required this.dataObj,
-  }) : super(key: key);
+  const QuizItemContainer(
+      {Key? key, required this.dataObj, this.quizCategoryName = ""})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,10 @@ class QuizItemContainer extends StatelessWidget {
                   SizedBox(
                     height: 4,
                   ),
-                  Text("${dataObj?.category?.title} - 10 Questions",
+                  Text(
+                      quizCategoryName.isNullOrEmpty
+                          ? "${dataObj?.category?.title} - 10 Questions"
+                          : "$quizCategoryName - 10 Questions",
                       style: TextStyle(fontSize: 12, color: ThemeColor.grey))
                 ],
               )

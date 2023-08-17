@@ -1,6 +1,12 @@
 // Commonly used Arguments
 const ARG_PHONE_NUMBER = "arg_phone_number";
 const ARG_QUIZ_DETAIL = "arg_quiz_detail";
+const ARG_QUIZ_ID = "arg_quiz_id";
+const ARG_SKIPPED_QUESTIONS_COUNT = "arg_skipped_questions_count";
+const ARG_CORRECT_ANSWER_COUNT = "arg_correct_answers_count";
+const ARG_INCORRECT_ANSWER_COUNT = "arg_incorrect_answer_count";
+const ARG_QUIZ_CATEGORY_ID = "arg_quiz_category_id";
+const ARG_QUIZ_CATEGORY_NAME = "arg_quiz_category_name";
 
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";

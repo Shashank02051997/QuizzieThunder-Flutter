@@ -1,3 +1,4 @@
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +25,9 @@ class QuizzesPage extends StatelessWidget {
                 color: ThemeColor.white,
               )),
           title: Text(
-            "Quizzes",
+            quizzesController.quizCategoryName.isNullOrEmpty
+                ? "Quizzes"
+                : "${quizzesController.quizCategoryName} Quizzes",
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -66,7 +69,12 @@ class QuizzesPage extends StatelessWidget {
                               });
                             },
                             child: QuizItemContainer(
-                                dataObj: quizzesController.allQuizzes[index]));
+                              dataObj: quizzesController.allQuizzes[index],
+                              quizCategoryName: quizzesController
+                                      .quizCategoryName.isNullOrEmpty
+                                  ? ""
+                                  : "${quizzesController.quizCategoryName}",
+                            ));
                       }),
                 ),
               )));
