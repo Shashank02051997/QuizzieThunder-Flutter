@@ -14,6 +14,7 @@ class QuizResultController extends GetxController {
   var skipQuestionCount = 0;
   var correctAnswerCount = 0;
   var incorrectAnswerCount = 0;
+  var completionPercentage = 0;
 
   var isLoading = false.obs;
 
@@ -23,6 +24,8 @@ class QuizResultController extends GetxController {
       skipQuestionCount = arguments[ARG_SKIPPED_QUESTIONS_COUNT];
       correctAnswerCount = arguments[ARG_CORRECT_ANSWER_COUNT];
       incorrectAnswerCount = arguments[ARG_INCORRECT_ANSWER_COUNT];
+      completionPercentage =
+          (skipQuestionCount + correctAnswerCount + incorrectAnswerCount) * 10;
     }
     postQuizResult();
     super.onInit();

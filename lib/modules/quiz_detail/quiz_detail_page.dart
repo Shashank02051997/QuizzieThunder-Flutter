@@ -180,7 +180,16 @@ class QuizDetailPage extends StatelessWidget {
                                 Get.toNamed(AppRoutes.quizQuestionPage,
                                     arguments: {
                                       ARG_QUIZ_ID:
-                                          quizDetailController.quizDetail?.id
+                                          quizDetailController.quizDetail?.id,
+                                      ARG_QUIZ_NAME: quizDetailController
+                                          .quizDetail?.title,
+                                      ARG_QUIZ_CATEGORY_NAME: quizDetailController
+                                              .quizCategoryName.isEmpty
+                                          ? "${quizDetailController.quizDetail?.category?.title.toString().toUpperCase()}"
+                                          : quizDetailController
+                                              .quizCategoryName
+                                              .toString()
+                                              .toUpperCase()
                                     });
                               },
                               child: Text("Start Quiz"),

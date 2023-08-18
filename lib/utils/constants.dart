@@ -7,6 +7,7 @@ const ARG_CORRECT_ANSWER_COUNT = "arg_correct_answers_count";
 const ARG_INCORRECT_ANSWER_COUNT = "arg_incorrect_answer_count";
 const ARG_QUIZ_CATEGORY_ID = "arg_quiz_category_id";
 const ARG_QUIZ_CATEGORY_NAME = "arg_quiz_category_name";
+const ARG_QUIZ_NAME = "arg_quiz_name";
 
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";

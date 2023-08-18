@@ -12,10 +12,12 @@ class ThemeColor {
   static const Color grey = Color(0xff5F5F5F);
   static const Color darkGrey = Color(0xff2D2D2D);
   static const Color red = Color(0xffE13939);
+  static const Color coralRed = Color(0xffff6666);
   static const Color lightRed = Color(0xffFF5A5A);
   static const Color lighterRed = Color.fromARGB(27, 225, 57, 57);
   static const Color orange = Color(0xffFF8E00);
   static const Color green = Color(0xff4CAF50);
+  static const Color vibrantGreen = Color(0xff53df83);
   static const Color lightGreen = Color.fromARGB(27, 76, 175, 79);
   static const Color lightestGreen = Color(0xffc9f2e9);
   static const Color blue = Color(0xff297dfe);

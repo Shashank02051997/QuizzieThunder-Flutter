@@ -89,7 +89,7 @@ class QuizResultPage extends StatelessWidget {
                               height: 8,
                             ),
                             Text(
-                                "${quizResultController.correctAnswerCount} Questions",
+                                "${quizResultController.correctAnswerCount} questions",
                                 style: TextStyle(
                                     color: ThemeColor.black,
                                     fontSize: 18,
@@ -112,7 +112,8 @@ class QuizResultPage extends StatelessWidget {
                             SizedBox(
                               height: 8,
                             ),
-                            Text("80%",
+                            Text(
+                                "${quizResultController.completionPercentage}%",
                                 style: TextStyle(
                                     color: ThemeColor.black,
                                     fontSize: 18,
