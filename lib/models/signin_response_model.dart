@@ -35,6 +35,8 @@ class Result {
     required this.lastname,
     required this.email,
     required this.mobile,
+    required this.about,
+    required this.profilePic,
     required this.token,
   });
 
@@ -43,6 +45,8 @@ class Result {
   final String? lastname;
   final String? email;
   final String? mobile;
+  final String? about;
+  final String? profilePic;
   final String? token;
 
   factory Result.fromJson(Map<String, dynamic> json) {
@@ -52,6 +56,8 @@ class Result {
       lastname: json["lastname"],
       email: json["email"],
       mobile: json["mobile"],
+      about: json["about"],
+      profilePic: json["profile_pic"],
       token: json["token"],
     );
   }
@@ -62,6 +68,8 @@ class Result {
         "lastname": lastname,
         "email": email,
         "mobile": mobile,
+        "about": about,
+        "profile_pic": profilePic,
         "token": token,
       };
 }

@@ -87,23 +87,26 @@ class User {
     required this.id,
     required this.firstname,
     required this.lastname,
+    required this.profilePic,
   });
 
   final String? id;
   final String? firstname;
   final String? lastname;
+  final String? profilePic;
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json["_id"],
-      firstname: json["firstname"],
-      lastname: json["lastname"],
-    );
+        id: json["_id"],
+        firstname: json["firstname"],
+        lastname: json["lastname"],
+        profilePic: json["profilePic"]);
   }
 
   Map<String, dynamic> toJson() => {
         "_id": id,
         "firstname": firstname,
         "lastname": lastname,
+        "profilePic": profilePic
       };
 }

@@ -16,6 +16,7 @@ class UpdateProfileController extends GetxController {
   final lastNameController = TextEditingController();
   final aboutController = TextEditingController();
 
+  var profilePicUrl = "".obs;
   var isLoading = false.obs;
 
   @override
@@ -30,6 +31,7 @@ class UpdateProfileController extends GetxController {
     var response = await updateProfileApi.getUserProfile(userId: userId);
     if (response.code == 200) {
       isLoading.value = false;
+      profilePicUrl.value = response.user?.profilePic ?? "";
       firstNameController.text = response.user?.firstname ?? "";
       lastNameController.text = response.user?.lastname ?? "";
       aboutController.text = response.user?.about ?? "";

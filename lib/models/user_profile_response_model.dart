@@ -37,6 +37,7 @@ class User {
     required this.mobile,
     required this.role,
     required this.about,
+    required this.profilePic,
     required this.isMobileNumberVerified,
     required this.isEmailVerified,
     required this.isBlocked,
@@ -52,6 +53,7 @@ class User {
   final String? mobile;
   final String? role;
   final String? about;
+  final String? profilePic;
   final bool? isMobileNumberVerified;
   final bool? isEmailVerified;
   final bool? isBlocked;
@@ -68,6 +70,7 @@ class User {
       mobile: json["mobile"],
       role: json["role"],
       about: json["about"],
+      profilePic: json["profilePic"],
       isMobileNumberVerified: json["isMobileNumberVerified"],
       isEmailVerified: json["isEmailVerified"],
       isBlocked: json["isBlocked"],
@@ -85,6 +88,7 @@ class User {
         "mobile": mobile,
         "role": role,
         "about": about,
+        "profilePic": profilePic,
         "isMobileNumberVerified": isMobileNumberVerified,
         "isEmailVerified": isEmailVerified,
         "isBlocked": isBlocked,

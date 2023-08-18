@@ -9,6 +9,7 @@ class HomeController extends GetxController {
   HomeApi homeApi = HomeApi();
 
   var fullName = "".obs;
+  var profilePicUrl = "".obs;
   var isLoading = false.obs;
 
   HomeScreenResponseModel? homeScreenResponseModel;
@@ -17,6 +18,7 @@ class HomeController extends GetxController {
   void onInit() {
     fullName.value =
         "${AppUtils.loginUserDetail().result?.firstname} ${AppUtils.loginUserDetail().result?.lastname}";
+    profilePicUrl.value = "${AppUtils.loginUserDetail().result?.profilePic}";
     getHomeScreenDetails();
     super.onInit();
   }

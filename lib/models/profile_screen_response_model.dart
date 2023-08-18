@@ -82,12 +82,14 @@ class UserDetail {
     required this.firstname,
     required this.lastname,
     required this.about,
+    required this.profilePic,
   });
 
   final String? id;
   final String? firstname;
   final String? lastname;
   final String? about;
+  final String? profilePic;
 
   factory UserDetail.fromJson(Map<String, dynamic> json) {
     return UserDetail(
@@ -95,6 +97,7 @@ class UserDetail {
       firstname: json["firstname"],
       lastname: json["lastname"],
       about: json["about"],
+      profilePic: json["profilePic"],
     );
   }
 
@@ -103,5 +106,6 @@ class UserDetail {
         "firstname": firstname,
         "lastname": lastname,
         "about": about,
+        "profilePic": profilePic,
       };
 }
