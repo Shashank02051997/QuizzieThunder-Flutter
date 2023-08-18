@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../theme/colors_theme.dart';
-import 'new_password_controller.dart';
+import 'update_password_controller.dart';
 
-class NewPasswordPage extends StatelessWidget {
-  const NewPasswordPage({Key? key}) : super(key: key);
+class UpdatePasswordPage extends StatelessWidget {
+  const UpdatePasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    NewPasswordController newPasswordController =
-        Get.find<NewPasswordController>();
+    UpdatePasswordController updatePasswordController =
+        Get.find<UpdatePasswordController>();
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -33,7 +33,7 @@ class NewPasswordPage extends StatelessWidget {
           elevation: 0,
         ),
         backgroundColor: ThemeColor.lighterPrimary,
-        body: Obx(() => newPasswordController.isLoading.value
+        body: Obx(() => updatePasswordController.isLoading.value
             ? const Center(child: CircularProgressIndicator())
             : Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -63,10 +63,10 @@ class NewPasswordPage extends StatelessWidget {
                         height: 8,
                       ),
                       TextFormField(
-                        controller: newPasswordController.passwordController,
+                        controller: updatePasswordController.passwordController,
                         keyboardType: TextInputType.text,
                         obscureText:
-                            newPasswordController.passwordInVisible.value,
+                            updatePasswordController.passwordInVisible.value,
                         style: TextStyle(color: ThemeColor.black, fontSize: 14),
                         enableSuggestions: false,
                         autocorrect: false,
@@ -77,14 +77,15 @@ class NewPasswordPage extends StatelessWidget {
                           ),
                           suffixIcon: IconButton(
                               icon: Icon(
-                                newPasswordController.passwordInVisible.value
+                                updatePasswordController.passwordInVisible.value
                                     ? Icons.visibility_off
                                     : Icons
                                         .visibility, //change icon based on boolean value
                               ),
                               onPressed: () {
-                                newPasswordController.passwordInVisible.value =
-                                    !newPasswordController
+                                updatePasswordController
+                                        .passwordInVisible.value =
+                                    !updatePasswordController
                                         .passwordInVisible.value;
                               }),
                           contentPadding: EdgeInsets.all(12),
@@ -118,9 +119,9 @@ class NewPasswordPage extends StatelessWidget {
                       ),
                       TextFormField(
                         controller:
-                            newPasswordController.confirmPasswordController,
+                            updatePasswordController.confirmPasswordController,
                         keyboardType: TextInputType.text,
-                        obscureText: newPasswordController
+                        obscureText: updatePasswordController
                             .confirmPasswordInVisible.value,
                         style: TextStyle(color: ThemeColor.black, fontSize: 14),
                         enableSuggestions: false,
@@ -132,16 +133,16 @@ class NewPasswordPage extends StatelessWidget {
                           ),
                           suffixIcon: IconButton(
                               icon: Icon(
-                                newPasswordController
+                                updatePasswordController
                                         .confirmPasswordInVisible.value
                                     ? Icons.visibility_off
                                     : Icons
                                         .visibility, //change icon based on boolean value
                               ),
                               onPressed: () {
-                                newPasswordController
+                                updatePasswordController
                                         .confirmPasswordInVisible.value =
-                                    !newPasswordController
+                                    !updatePasswordController
                                         .confirmPasswordInVisible.value;
                               }),
                           contentPadding: EdgeInsets.all(12),
@@ -168,9 +169,9 @@ class NewPasswordPage extends StatelessWidget {
                           height: 44,
                           child: ElevatedButton(
                             onPressed: () {
-                              newPasswordController.resetPassword();
+                              updatePasswordController.updatePassword();
                             },
-                            child: Text("Reset Password"),
+                            child: Text("Update Password"),
                             style: TextButton.styleFrom(
                               textStyle: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),

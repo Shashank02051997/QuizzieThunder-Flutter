@@ -5,7 +5,8 @@ class AppRoutes {
   static const signInPage = '/signInPage';
   static const forgotPasswordPage = '/forgotPasswordPage';
   static const verifyOtpPage = '/verifyOtpPage';
-  static const newPasswordPage = '/newPasswordPage';
+  static const createNewPasswordPage = '/createNewPasswordPage';
+  static const updatePasswordPage = '/updatePasswordPage';
   static const signUpPage = '/signUpPage';
   static const dashboardPage = '/dashboardPage';
   static const settingsPage = '/settingsPage';

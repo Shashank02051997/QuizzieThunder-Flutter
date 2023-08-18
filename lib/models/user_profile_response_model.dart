@@ -2,17 +2,20 @@ class UserProfileResponseModel {
   UserProfileResponseModel({
     required this.code,
     required this.status,
+    required this.message,
     required this.user,
   });
 
   final int? code;
   final bool? status;
+  final String? message;
   final User? user;
 
   factory UserProfileResponseModel.fromJson(Map<String, dynamic> json) {
     return UserProfileResponseModel(
       code: json["code"],
       status: json["status"],
+      message: json["message"],
       user: json["user"] == null ? null : User.fromJson(json["user"]),
     );
   }
@@ -20,6 +23,7 @@ class UserProfileResponseModel {
   Map<String, dynamic> toJson() => {
         "code": code,
         "status": status,
+        "message": message,
         "user": user?.toJson(),
       };
 }

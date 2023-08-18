@@ -1,5 +1,5 @@
-class ResetPasswordResponseModel {
-  ResetPasswordResponseModel({
+class UpdatePasswordResponseModel {
+  UpdatePasswordResponseModel({
     required this.code,
     required this.status,
     required this.message,
@@ -9,8 +9,8 @@ class ResetPasswordResponseModel {
   final bool? status;
   final String? message;
 
-  factory ResetPasswordResponseModel.fromJson(Map<String, dynamic> json) {
-    return ResetPasswordResponseModel(
+  factory UpdatePasswordResponseModel.fromJson(Map<String, dynamic> json) {
+    return UpdatePasswordResponseModel(
       code: json["code"],
       status: json["status"],
       message: json["message"],

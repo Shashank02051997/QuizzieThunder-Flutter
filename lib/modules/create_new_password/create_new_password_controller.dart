@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../apis/new_password_api.dart';
-import '../../models/reset_password_post_body_model.dart';
+import '../../models/create_new_password_post_body_model.dart';
 import '../../routes/app_routes.dart';
 import '../../utils/app_utils.dart';
 import '../../utils/constants.dart';
 import '../../utils/enums/snackbar_status.dart';
 
-class NewPasswordController extends GetxController {
+class CreateNewPasswordController extends GetxController {
   ResetPasswordApi resetPasswordApi = ResetPasswordApi();
 
   final arguments = Get.arguments;
 
+  final verficationCodeController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
@@ -30,7 +31,10 @@ class NewPasswordController extends GetxController {
   }
 
   bool _newPasswordFormValidation() {
-    if (passwordController.text.isEmpty) {
+    if (verficationCodeController.text.isEmpty) {
+      errorMessage = "Verification Code should not be empty";
+      return false;
+    } else if (passwordController.text.isEmpty) {
       errorMessage = "Password should not be empty";
       return false;
     } else if (confirmPasswordController.text.isEmpty) {
@@ -44,19 +48,22 @@ class NewPasswordController extends GetxController {
     }
   }
 
-  void resetPassword() async {
+  void createNewPassword() async {
     if (_newPasswordFormValidation()) {
-      ResetPasswordPostBodyModel resetPasswordPostBodyModel =
-          ResetPasswordPostBodyModel(
-              mobile: phoneNumber, newPassword: confirmPasswordController.text);
+      CreateNewPasswordPostBodyModel createNewPasswordPostBodyModel =
+          CreateNewPasswordPostBodyModel(
+              mobile: phoneNumber,
+              otp: verficationCodeController.text,
+              newPassword: confirmPasswordController.text);
       isLoading.value = true;
-      var response = await resetPasswordApi.resetPassword(
-          resetPasswordPostBodyModel: resetPasswordPostBodyModel);
+      var response = await resetPasswordApi.createNewPassword(
+          createNewPasswordPostBodyModel: createNewPasswordPostBodyModel);
       if (response.code == 200) {
         isLoading.value = false;
         Get.offAllNamed(AppRoutes.signInPage);
         AppUtils.showSnackBar(
-            response.message ?? "Password updated successfully. Please login",
+            response.message ??
+                "New password created successfully. Please login",
             status: MessageStatus.SUCCESS);
       } else {
         isLoading.value = false;

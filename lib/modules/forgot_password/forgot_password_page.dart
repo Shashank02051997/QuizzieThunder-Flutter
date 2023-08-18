@@ -45,7 +45,7 @@ class ForgotPasswordPage extends StatelessWidget {
                         height: 12,
                       ),
                       Text(
-                        "Enter your email and we will send you a link to reset your password",
+                        "Please enter your mobile number for get OTP to your mobile number to reset your password",
                         style: TextStyle(
                             fontSize: 14, color: ThemeColor.textPrimary),
                       ),
@@ -100,7 +100,7 @@ class ForgotPasswordPage extends StatelessWidget {
                             onPressed: () {
                               forgotPasswordController.forgotPassword();
                             },
-                            child: Text("Reset Password"),
+                            child: Text("Next"),
                             style: TextButton.styleFrom(
                               textStyle: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),

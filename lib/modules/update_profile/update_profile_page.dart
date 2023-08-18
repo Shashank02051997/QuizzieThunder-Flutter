@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import '../../utils/app_utils.dart';
 import 'update_profile_controller.dart';
@@ -222,7 +221,7 @@ class UpdateProfilePage extends StatelessWidget {
                                 height: 44,
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    //Get.toNamed(AppRoutes.signInPage);
+                                    updateProfileController.updateUserProfile();
                                   },
                                   child: Text("Update"),
                                   style: TextButton.styleFrom(

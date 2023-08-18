@@ -2,17 +2,20 @@ class UpdateProfileResponseModel {
   UpdateProfileResponseModel({
     required this.code,
     required this.status,
+    required this.message,
     required this.updatedUser,
   });
 
   final int? code;
   final bool? status;
+  final String? message;
   final UpdatedUser? updatedUser;
 
   factory UpdateProfileResponseModel.fromJson(Map<String, dynamic> json) {
     return UpdateProfileResponseModel(
       code: json["code"],
       status: json["status"],
+      message: json["message"],
       updatedUser: json["updatedUser"] == null
           ? null
           : UpdatedUser.fromJson(json["updatedUser"]),
@@ -22,6 +25,7 @@ class UpdateProfileResponseModel {
   Map<String, dynamic> toJson() => {
         "code": code,
         "status": status,
+        "message": message,
         "updatedUser": updatedUser?.toJson(),
       };
 }

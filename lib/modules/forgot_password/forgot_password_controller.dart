@@ -42,7 +42,7 @@ class ForgotPasswordController extends GetxController {
           forgotPasswordPostBodyModel: forgotPasswordPostBodyModel);
       if (response.code == 200) {
         isLoading.value = false;
-        Get.toNamed(AppRoutes.newPasswordPage,
+        Get.toNamed(AppRoutes.createNewPasswordPage,
             arguments: {ARG_PHONE_NUMBER: phoneNumberController.text});
       } else {
         isLoading.value = false;

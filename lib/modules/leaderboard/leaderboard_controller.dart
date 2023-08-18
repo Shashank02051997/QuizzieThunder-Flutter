@@ -6,10 +6,9 @@ import '../../utils/app_utils.dart';
 import '../../utils/enums/snackbar_status.dart';
 
 class LeaderboardController extends GetxController {
-  var selectedTabIndex = 0.obs;
-
   LeaderboardApi leaderboardApi = LeaderboardApi();
 
+  var selectedTabIndex = 0.obs;
   var isLoading = false.obs;
 
   LeaderboardScreenResponseModel? leaderboardScreenResponseModel;

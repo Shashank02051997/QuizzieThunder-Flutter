@@ -168,7 +168,7 @@ class LeaderboardPage extends StatelessWidget {
                             ),
                             allTimeWinnerInfo(leaderboardController
                                 .leaderboardScreenResponseModel
-                                ?.allTimeLeaderboard?[0]),
+                                ?.allTimeLeaderboard?[1]),
                           ],
                         ),
                         allTimeWinnerInfo(leaderboardController
@@ -181,7 +181,7 @@ class LeaderboardPage extends StatelessWidget {
                             ),
                             allTimeWinnerInfo(leaderboardController
                                 .leaderboardScreenResponseModel
-                                ?.allTimeLeaderboard?[0]),
+                                ?.allTimeLeaderboard?[2]),
                           ],
                         ),
                       ],
@@ -205,9 +205,16 @@ class LeaderboardPage extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      itemCount: 10,
+                      itemCount: leaderboardController
+                              .leaderboardScreenResponseModel
+                              ?.allTimeLeaderboard
+                              ?.length ??
+                          0,
                       itemBuilder: (context, index) {
-                        return userQuizPointsInfoContainter(index);
+                        return userQuizPointsInfoContainter(
+                            index,
+                            leaderboardController.leaderboardScreenResponseModel
+                                ?.allTimeLeaderboard?[index]);
                       }),
                 )),
           ],
@@ -282,15 +289,20 @@ class LeaderboardPage extends StatelessWidget {
                   return SizedBox(height: 12);
                 },
                 scrollDirection: Axis.vertical,
-                itemCount: 10,
+                itemCount: leaderboardController.leaderboardScreenResponseModel
+                        ?.weeklyLeaderboard?.length ??
+                    0,
                 itemBuilder: (context, index) {
-                  return userQuizPointsInfoContainter(index);
+                  return userQuizPointsInfoContainter(
+                      index,
+                      leaderboardController.leaderboardScreenResponseModel
+                          ?.weeklyLeaderboard?[index]);
                 }),
           )),
     );
   }
 
-  Container userQuizPointsInfoContainter(int index) {
+  Container userQuizPointsInfoContainter(int index, Leaderboard? leaderboard) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -345,7 +357,7 @@ class LeaderboardPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Davis Curtis",
+                        "${leaderboard?.user?.firstname} ${leaderboard?.user?.lastname}",
                         softWrap: false,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -358,7 +370,7 @@ class LeaderboardPage extends StatelessWidget {
                         height: 4,
                       ),
                       Text(
-                        "1,124 points",
+                        "${leaderboard?.points} points",
                         style:
                             TextStyle(fontSize: 14, color: ThemeColor.grey_500),
                       ),
@@ -368,10 +380,17 @@ class LeaderboardPage extends StatelessWidget {
               ],
             ),
           ),
-          Image.asset(
-            "assets/images/gold_badge.png",
-            width: 28,
-            fit: BoxFit.cover,
+          Visibility(
+            visible: index < 3,
+            child: Image.asset(
+              index == 0
+                  ? "assets/images/gold_badge.png"
+                  : index == 1
+                      ? "assets/images/silver_badge.png"
+                      : "assets/images/bronze_badge.png",
+              width: 28,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),

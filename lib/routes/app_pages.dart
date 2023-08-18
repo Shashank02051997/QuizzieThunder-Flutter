@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 
+import '../modules/create_new_password/create_new_password_binding.dart';
+import '../modules/create_new_password/create_new_password_page.dart';
 import '../modules/dashboard/dashboard_binding.dart';
 import '../modules/dashboard/dashboard_page.dart';
 import '../modules/forgot_password/forgot_password_binding.dart';
 import '../modules/forgot_password/forgot_password_page.dart';
-import '../modules/new_password/new_password_binding.dart';
-import '../modules/new_password/new_password_page.dart';
+import '../modules/udpate_password/udpate_password_binding.dart';
+import '../modules/udpate_password/update_password_page.dart';
 import '../modules/quiz_detail/quiz_detail_binding.dart';
 import '../modules/quiz_detail/quiz_detail_page.dart';
 import '../modules/quiz_question/quiz_question_binding.dart';
@@ -53,9 +55,14 @@ class AppPages {
       binding: ForgotPasswordBinding(),
     ),
     GetPage(
-      name: AppRoutes.newPasswordPage,
-      page: () => NewPasswordPage(),
-      binding: NewPasswordBinding(),
+      name: AppRoutes.createNewPasswordPage,
+      page: () => CreateNewPasswordPage(),
+      binding: CreateNewPasswordBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.updatePasswordPage,
+      page: () => UpdatePasswordPage(),
+      binding: UpdatePasswordBinding(),
     ),
     GetPage(
       name: AppRoutes.signUpPage,
