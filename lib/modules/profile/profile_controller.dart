@@ -23,8 +23,8 @@ class ProfileController extends GetxController {
     isLoading.value = true;
     var response = await profileApi.getProfileScreenDetails();
     if (response.code == 200) {
-      isLoading.value = false;
       profileScreenResponseModel = response;
+      isLoading.value = false;
     } else {
       isLoading.value = false;
       AppUtils.showSnackBar("Error", status: MessageStatus.ERROR);

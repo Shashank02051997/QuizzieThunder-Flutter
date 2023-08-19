@@ -11,6 +11,8 @@ class QuizResultController extends GetxController {
 
   final arguments = Get.arguments;
 
+  var quizName = "";
+  var quizCategoryName = "";
   var skipQuestionCount = 0;
   var correctAnswerCount = 0;
   var incorrectAnswerCount = 0;
@@ -21,6 +23,8 @@ class QuizResultController extends GetxController {
   @override
   void onInit() {
     if (arguments != null) {
+      quizName = arguments[ARG_QUIZ_NAME] ?? "";
+      quizCategoryName = arguments[ARG_QUIZ_CATEGORY_NAME] ?? "";
       skipQuestionCount = arguments[ARG_SKIPPED_QUESTIONS_COUNT];
       correctAnswerCount = arguments[ARG_CORRECT_ANSWER_COUNT];
       incorrectAnswerCount = arguments[ARG_INCORRECT_ANSWER_COUNT];

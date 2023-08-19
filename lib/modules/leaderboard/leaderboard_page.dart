@@ -28,117 +28,122 @@ class LeaderboardPage extends StatelessWidget {
           elevation: 0,
         ),
         backgroundColor: ThemeColor.primary,
-        body: Obx(() => leaderboardController.isLoading.value
-            ? const Center(
-                child: CircularProgressIndicator(
-                color: ThemeColor.white,
-              ))
-            : Column(
-                children: [
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: ThemeColor.primaryDark,
-                          borderRadius: BorderRadius.circular(16)),
-                      padding: const EdgeInsets.all(4),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: InkWell(
-                              onTap: () {
-                                leaderboardController.selectedTabIndex.value =
-                                    0;
-                              },
-                              child: leaderboardController
-                                          .selectedTabIndex.value ==
-                                      0
-                                  ? Container(
-                                      decoration: BoxDecoration(
-                                          color: ThemeColor.lightPrimary,
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16, vertical: 8),
-                                      child: Text(
-                                        "Weekly",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: ThemeColor.white,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ))
-                                  : Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16, vertical: 8),
-                                      child: Text(
-                                        "Weekly",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: ThemeColor.white
-                                                .withOpacity(0.6),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+        body: Obx(() => RefreshIndicator(
+              onRefresh: () async {
+                leaderboardController.getLeaderboardScreenDetails();
+              },
+              child: leaderboardController.isLoading.value
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                      color: ThemeColor.white,
+                    ))
+                  : Column(
+                      children: [
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 24),
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: ThemeColor.primaryDark,
+                                borderRadius: BorderRadius.circular(16)),
+                            padding: const EdgeInsets.all(4),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      leaderboardController
+                                          .selectedTabIndex.value = 0;
+                                    },
+                                    child: leaderboardController
+                                                .selectedTabIndex.value ==
+                                            0
+                                        ? Container(
+                                            decoration: BoxDecoration(
+                                                color: ThemeColor.lightPrimary,
+                                                borderRadius:
+                                                    BorderRadius.circular(16)),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 8),
+                                            child: Text(
+                                              "Weekly",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: ThemeColor.white,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold),
+                                            ))
+                                        : Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 8),
+                                            child: Text(
+                                              "Weekly",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: ThemeColor.white
+                                                      .withOpacity(0.6),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      leaderboardController
+                                          .selectedTabIndex.value = 1;
+                                    },
+                                    child: leaderboardController
+                                                .selectedTabIndex.value ==
+                                            1
+                                        ? Container(
+                                            decoration: BoxDecoration(
+                                                color: ThemeColor.lightPrimary,
+                                                borderRadius:
+                                                    BorderRadius.circular(16)),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 8),
+                                            child: Text(
+                                              "All Time",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: ThemeColor.white,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold),
+                                            ))
+                                        : Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 8),
+                                            child: Text(
+                                              "All Time",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: ThemeColor.white
+                                                      .withOpacity(0.6),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                  ),
+                                )
+                              ],
                             ),
                           ),
-                          Expanded(
-                            child: InkWell(
-                              onTap: () {
-                                leaderboardController.selectedTabIndex.value =
-                                    1;
-                              },
-                              child: leaderboardController
-                                          .selectedTabIndex.value ==
-                                      1
-                                  ? Container(
-                                      decoration: BoxDecoration(
-                                          color: ThemeColor.lightPrimary,
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16, vertical: 8),
-                                      child: Text(
-                                        "All Time",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: ThemeColor.white,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ))
-                                  : Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16, vertical: 8),
-                                      child: Text(
-                                        "All Time",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: ThemeColor.white
-                                                .withOpacity(0.6),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        leaderboardController.selectedTabIndex.value == 0
+                            ? weeklyLeaderboard(leaderboardController)
+                            : allTimeLeaderboard(leaderboardController)
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  leaderboardController.selectedTabIndex.value == 0
-                      ? weeklyLeaderboard(leaderboardController)
-                      : allTimeLeaderboard(leaderboardController)
-                ],
-              )));
+            )));
   }
 
   Expanded allTimeLeaderboard(LeaderboardController leaderboardController) {
@@ -292,27 +297,44 @@ class LeaderboardPage extends StatelessWidget {
     return Expanded(
       child: Padding(
           padding: const EdgeInsets.only(left: 8, right: 8, bottom: 24),
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
-            decoration: BoxDecoration(
-                color: ThemeColor.lighterPrimary,
-                borderRadius: BorderRadius.circular(20)),
-            child: ListView.separated(
-                separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 12);
-                },
-                scrollDirection: Axis.vertical,
-                itemCount: leaderboardController.leaderboardScreenResponseModel
-                        ?.weeklyLeaderboard?.length ??
-                    0,
-                itemBuilder: (context, index) {
-                  return userQuizPointsInfoContainter(
-                      index,
-                      leaderboardController.leaderboardScreenResponseModel
-                          ?.weeklyLeaderboard?[index]);
-                }),
-          )),
+          child: leaderboardController.leaderboardScreenResponseModel
+                      ?.weeklyLeaderboard?.isEmpty ==
+                  true
+              ? Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
+                  decoration: BoxDecoration(
+                      color: ThemeColor.lighterPrimary,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                    child: Text(
+                      "No data available for this week",
+                      style: TextStyle(color: ThemeColor.textPrimary),
+                    ),
+                  ))
+              : Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
+                  decoration: BoxDecoration(
+                      color: ThemeColor.lighterPrimary,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: ListView.separated(
+                      separatorBuilder: (BuildContext context, int index) {
+                        return SizedBox(height: 12);
+                      },
+                      scrollDirection: Axis.vertical,
+                      itemCount: leaderboardController
+                              .leaderboardScreenResponseModel
+                              ?.weeklyLeaderboard
+                              ?.length ??
+                          0,
+                      itemBuilder: (context, index) {
+                        return userQuizPointsInfoContainter(
+                            index,
+                            leaderboardController.leaderboardScreenResponseModel
+                                ?.weeklyLeaderboard?[index]);
+                      }),
+                )),
     );
   }
 

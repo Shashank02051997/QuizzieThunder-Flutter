@@ -61,8 +61,11 @@ class SettingsPage extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                settingsInfoContainer(Icons.mail_outline_rounded,
-                    "Change Email Address", "madias@gmail.com"),
+                InkWell(
+                  onTap: () {},
+                  child: settingsInfoContainer(Icons.mail_outline_rounded,
+                      "Change Email Address", "${settingsController.email}"),
+                ),
                 SizedBox(
                   height: 12,
                 ),

@@ -49,6 +49,26 @@ class QuizResultPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                            "${quizResultController.quizName}",
+                            style: TextStyle(
+                                color: ThemeColor.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            "${quizResultController.quizCategoryName}",
+                            style: TextStyle(
+                              color: ThemeColor.white,
+                              fontSize: 12,
+                            ),
+                          ),
                           Image.asset(
                             "assets/images/prize.png",
                             width: 200,

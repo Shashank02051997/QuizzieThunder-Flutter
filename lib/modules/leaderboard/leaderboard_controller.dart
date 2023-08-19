@@ -23,8 +23,8 @@ class LeaderboardController extends GetxController {
     isLoading.value = true;
     var response = await leaderboardApi.getLeaderboardScreenDetails();
     if (response.code == 200) {
-      isLoading.value = false;
       leaderboardScreenResponseModel = response;
+      isLoading.value = false;
     } else {
       isLoading.value = false;
       AppUtils.showSnackBar("Error", status: MessageStatus.ERROR);

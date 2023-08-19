@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../theme/colors_theme.dart';
 import '../../utils/app_utils.dart';
+import '../../widgets/choose_avatar_bottom_sheet.dart';
 import 'update_profile_controller.dart';
 
 class UpdateProfilePage extends StatelessWidget {
@@ -49,7 +50,27 @@ class UpdateProfilePage extends StatelessWidget {
                             Align(
                               alignment: Alignment.center,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(16),
+                                        ),
+                                      ),
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      backgroundColor: Colors.white,
+                                      builder: (context) {
+                                        return ChooseAvatarBottomSheet(
+                                            allAvatars: updateProfileController
+                                                .allAvatars,
+                                            onTap: (profilePic) {
+                                              updateProfileController
+                                                  .profilePicUrl
+                                                  .value = profilePic;
+                                            });
+                                      });
+                                },
                                 child: SizedBox(
                                   width: 80,
                                   height: 80,

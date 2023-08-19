@@ -9,6 +9,9 @@ import '../../utils/enums/snackbar_status.dart';
 class UpdatePasswordController extends GetxController {
   ResetPasswordApi resetPasswordApi = ResetPasswordApi();
 
+  final GlobalKey<FormState> updatePasswordFormKey =
+      GlobalKey<FormState>(debugLabel: '__updatePasswordFormKey__');
+
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 

@@ -22,8 +22,8 @@ class DiscoverController extends GetxController {
     isLoading.value = true;
     var response = await discoverApi.getDiscoverScreenDetails();
     if (response.code == 200) {
-      isLoading.value = false;
       discoverScreenResponseModel = response;
+      isLoading.value = false;
     } else {
       isLoading.value = false;
       AppUtils.showSnackBar("Error", status: MessageStatus.ERROR);
