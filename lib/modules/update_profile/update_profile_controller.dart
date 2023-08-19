@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizzie_thunder/modules/profile/profile_controller.dart';
 
 import '../../apis/update_profile_api.dart';
 import '../../models/all_avatar_response_model.dart';
 import '../../models/update_profile_post_body_model.dart';
 import '../../utils/app_utils.dart';
 import '../../utils/enums/snackbar_status.dart';
+import '../profile/profile_controller.dart';
 
 class UpdateProfileController extends GetxController {
   ProfileController profileController = Get.find<ProfileController>();

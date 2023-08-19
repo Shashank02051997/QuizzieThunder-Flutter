@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizzie_thunder/utils/app_utils.dart';
 
 import '../../models/leaderboard_screen_response_model.dart';
 import '../../theme/colors_theme.dart';
+import '../../utils/app_utils.dart';
 import 'leaderboard_controller.dart';
 
 class LeaderboardPage extends StatelessWidget {

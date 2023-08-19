@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
+
 import '../models/signin_response_model.dart';
 import 'api_logging_interceptor.dart';
 import 'constants.dart';
@@ -9,8 +10,8 @@ class DioClient {
   static Dio getDioInstance() {
     var dio = Dio(BaseOptions(
       baseUrl: "https://quizzie-thunder-apis.onrender.com/",
-      connectTimeout: Duration(minutes: 3),
-      receiveTimeout: Duration(minutes: 2),
+      connectTimeout: Duration(minutes: 2),
+      receiveTimeout: Duration(minutes: 1),
     ))
       ..options.headers["content-type"] = "application/json"
       ..options.headers["Authorization"] = GetStorage().read(KEY_USER_DATA) ==

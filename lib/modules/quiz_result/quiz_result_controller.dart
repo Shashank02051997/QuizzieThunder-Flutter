@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
-import 'package:quizzie_thunder/models/quiz_result_post_body_model.dart';
-import 'package:quizzie_thunder/utils/constants.dart';
 
 import '../../apis/quiz_result_api.dart';
+import '../../models/quiz_result_post_body_model.dart';
 import '../../utils/app_utils.dart';
+import '../../utils/constants.dart';
 import '../../utils/enums/snackbar_status.dart';
+import '../profile/profile_controller.dart';
 
 class QuizResultController extends GetxController {
+  ProfileController profileController = Get.find<ProfileController>();
   QuizResultApi quizResultApi = QuizResultApi();
 
   final arguments = Get.arguments;
@@ -42,6 +44,7 @@ class QuizResultController extends GetxController {
     var response = await quizResultApi.submitQuizResult(
         quizResultPostBodyModel: quizResultPostBodyModel);
     if (response.code == 200) {
+      profileController.getProfileScreenDetails();
       isLoading.value = false;
     } else {
       isLoading.value = false;
