@@ -5,7 +5,6 @@ class ProfileScreenResponseModel {
     required this.message,
     required this.userDetail,
     required this.stats,
-    required this.rank,
   });
 
   final int? code;
@@ -13,7 +12,6 @@ class ProfileScreenResponseModel {
   final String? message;
   final UserDetail? userDetail;
   final Stats? stats;
-  final int? rank;
 
   factory ProfileScreenResponseModel.fromJson(Map<String, dynamic> json) {
     return ProfileScreenResponseModel(
@@ -24,7 +22,6 @@ class ProfileScreenResponseModel {
           ? null
           : UserDetail.fromJson(json["user_detail"]),
       stats: json["stats"] == null ? null : Stats.fromJson(json["stats"]),
-      rank: json["rank"],
     );
   }
 
@@ -34,7 +31,6 @@ class ProfileScreenResponseModel {
         "message": message,
         "user_detail": userDetail?.toJson(),
         "stats": stats?.toJson(),
-        "rank": rank,
       };
 }
 
@@ -43,7 +39,11 @@ class Stats {
     required this.quizWon,
     required this.id,
     required this.points,
-    required this.quizPlayed,
+    required this.totalQuizPlayed,
+    required this.rank,
+    required this.successRate,
+    required this.averagePointsPerQuiz,
+    required this.quizParticipationRate,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -51,26 +51,38 @@ class Stats {
   final int? quizWon;
   final String? id;
   final int? points;
-  final int? quizPlayed;
+  final int? totalQuizPlayed;
+  final int? rank;
+  final int? successRate;
+  final double? averagePointsPerQuiz;
+  final double? quizParticipationRate;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
   factory Stats.fromJson(Map<String, dynamic> json) {
     return Stats(
-      quizWon: json["quizWon"],
+      quizWon: json["quiz_won"],
       id: json["_id"],
       points: json["points"],
-      quizPlayed: json["quizPlayed"],
+      totalQuizPlayed: json["total_quiz_played"],
+      rank: json["rank"],
+      successRate: json["success_rate"],
+      averagePointsPerQuiz: json["average_points_per_quiz"]?.toDouble(),
+      quizParticipationRate: json["quiz_participation_rate"]?.toDouble(),
       createdAt: DateTime.tryParse(json["createdAt"] ?? ""),
       updatedAt: DateTime.tryParse(json["updatedAt"] ?? ""),
     );
   }
 
   Map<String, dynamic> toJson() => {
-        "quizWon": quizWon,
+        "quiz_won": quizWon,
         "_id": id,
         "points": points,
-        "quizPlayed": quizPlayed,
+        "total_quiz_played": totalQuizPlayed,
+        "rank": rank,
+        "success_rate": successRate,
+        "average_points_per_quiz": averagePointsPerQuiz,
+        "quiz_participation_rate": quizParticipationRate,
         "createdAt": createdAt?.toIso8601String(),
         "updatedAt": updatedAt?.toIso8601String(),
       };
@@ -81,14 +93,32 @@ class UserDetail {
     required this.id,
     required this.firstname,
     required this.lastname,
+    required this.email,
+    required this.mobile,
     required this.about,
+    required this.role,
+    required this.isMobileNumberVerified,
+    required this.isEmailVerified,
+    required this.isBlocked,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.v,
     required this.profilePic,
   });
 
   final String? id;
   final String? firstname;
   final String? lastname;
+  final String? email;
+  final String? mobile;
   final String? about;
+  final String? role;
+  final bool? isMobileNumberVerified;
+  final bool? isEmailVerified;
+  final bool? isBlocked;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
+  final int? v;
   final String? profilePic;
 
   factory UserDetail.fromJson(Map<String, dynamic> json) {
@@ -96,7 +126,16 @@ class UserDetail {
       id: json["_id"],
       firstname: json["firstname"],
       lastname: json["lastname"],
+      email: json["email"],
+      mobile: json["mobile"],
       about: json["about"],
+      role: json["role"],
+      isMobileNumberVerified: json["isMobileNumberVerified"],
+      isEmailVerified: json["isEmailVerified"],
+      isBlocked: json["isBlocked"],
+      createdAt: DateTime.tryParse(json["createdAt"] ?? ""),
+      updatedAt: DateTime.tryParse(json["updatedAt"] ?? ""),
+      v: json["__v"],
       profilePic: json["profilePic"],
     );
   }
@@ -105,7 +144,16 @@ class UserDetail {
         "_id": id,
         "firstname": firstname,
         "lastname": lastname,
+        "email": email,
+        "mobile": mobile,
         "about": about,
+        "role": role,
+        "isMobileNumberVerified": isMobileNumberVerified,
+        "isEmailVerified": isEmailVerified,
+        "isBlocked": isBlocked,
+        "createdAt": createdAt?.toIso8601String(),
+        "updatedAt": updatedAt?.toIso8601String(),
+        "__v": v,
         "profilePic": profilePic,
       };
 }

@@ -71,6 +71,7 @@ class VerifyOtpController extends GetxController {
         AppUtils.showSnackBar(
             response.message ??
                 "Mobile number verified successfully. Please login",
+            title: "Verified",
             status: MessageStatus.SUCCESS);
       } else {
         isLoading.value = false;

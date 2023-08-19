@@ -76,15 +76,15 @@ class ProfilePage extends StatelessWidget {
                                     userInfoBlock(
                                         Icons.star_border_outlined,
                                         "POINTS",
-                                        "${profileController.profileScreenResponseModel?.stats?.points}"),
+                                        "${profileController.profileScreenResponseModel?.stats?.points ?? 0}"),
                                     userInfoBlock(
                                         Icons.bar_chart_outlined,
                                         "RANK",
-                                        "#${profileController.profileScreenResponseModel?.rank ?? "--"}"),
+                                        "#${profileController.profileScreenResponseModel?.stats?.rank ?? "--"}"),
                                     userInfoBlock(
                                         Icons.handshake_outlined,
                                         "WON",
-                                        "${profileController.profileScreenResponseModel?.stats?.quizWon}"),
+                                        "${profileController.profileScreenResponseModel?.stats?.quizWon ?? 0}"),
                                   ],
                                 ),
                               ),
@@ -273,10 +273,56 @@ class ProfilePage extends StatelessWidget {
   Container detailSection(ProfileController profileController) {
     return Container(
       width: double.infinity,
-      child: Text(
-        "${profileController.profileScreenResponseModel?.userDetail?.about ?? ""}",
-        textAlign: TextAlign.left,
-        style: TextStyle(color: ThemeColor.black, fontSize: 16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "EMAIL",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.grey, fontSize: 12),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            "${profileController.profileScreenResponseModel?.userDetail?.email}",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.black, fontSize: 16),
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Text(
+            "PHONE",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.grey, fontSize: 12),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            "${profileController.profileScreenResponseModel?.userDetail?.mobile}",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.black, fontSize: 16),
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Text(
+            "ABOUT",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.grey, fontSize: 12),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            "${profileController.profileScreenResponseModel?.userDetail?.about ?? "--"}",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: ThemeColor.black, fontSize: 16),
+          ),
+        ],
       ),
     );
   }
@@ -293,7 +339,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 64,
+              height: 48,
             ),
             RichText(
                 textAlign: TextAlign.center,
@@ -308,12 +354,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                       TextSpan(
                           text:
-                              "${profileController.profileScreenResponseModel?.stats?.quizPlayed} quizzes ",
+                              "${profileController.profileScreenResponseModel?.stats?.totalQuizPlayed ?? 0} quizzes ",
                           style: TextStyle(
                               color: ThemeColor.accent,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: "this month",
+                          text: "this year",
                           style: TextStyle(
                               color: ThemeColor.black,
                               fontWeight: FontWeight.bold)),
@@ -328,24 +374,32 @@ class ProfilePage extends StatelessWidget {
                   width: 120,
                   height: 120,
                   child: CircularProgressIndicator(
-                    value: 0.6,
+                    value: (profileController.profileScreenResponseModel?.stats
+                                ?.successRate ??
+                            0) /
+                        100,
                     color: ThemeColor.primaryDark,
                     backgroundColor: ThemeColor.white,
                     strokeWidth: 10,
                   ),
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "37",
+                      "${profileController.profileScreenResponseModel?.stats?.successRate ?? 0}%",
                       style: TextStyle(
-                        fontSize: 32,
+                        fontSize: 28,
                         fontWeight: FontWeight.bold,
                         color: ThemeColor.black,
                       ),
                     ),
+                    SizedBox(
+                      height: 4,
+                    ),
                     Text(
-                      "quiz played",
+                      "Success Rate",
                       style: TextStyle(
                         fontSize: 12,
                         color: ThemeColor.grey,
@@ -373,9 +427,9 @@ class ProfilePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "5",
+                        "${profileController.profileScreenResponseModel?.stats?.averagePointsPerQuiz?.toInt() ?? 0}",
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: ThemeColor.black,
                         ),
@@ -384,7 +438,7 @@ class ProfilePage extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "Quiz Created",
+                        "Average Points Per Quiz",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -408,9 +462,9 @@ class ProfilePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "5",
+                          "${profileController.profileScreenResponseModel?.stats?.quizParticipationRate?.toInt() ?? 0}%",
                           style: TextStyle(
-                            fontSize: 24,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: ThemeColor.white,
                           ),
@@ -419,7 +473,7 @@ class ProfilePage extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          "Quiz Created",
+                          "Quiz Participation Rate",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
