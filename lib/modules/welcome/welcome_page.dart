@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizzie_thunder/routes/app_routes.dart';
 
+import '../../routes/app_routes.dart';
 import '../../theme/colors_theme.dart';
 import 'welcome_controller.dart';
 

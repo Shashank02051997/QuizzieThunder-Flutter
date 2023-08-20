@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.quizzie_thunder">
+    package="com.shashank.quizzie_thunder">
 
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="quizzie_thunder"
+        android:label="Quizzie Thunder"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

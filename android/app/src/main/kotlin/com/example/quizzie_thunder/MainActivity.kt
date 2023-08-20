@@ -1,4 +1,4 @@
-package com.example.quizzie_thunder
+package com.shashank.quizzie_thunder
 
 import io.flutter.embedding.android.FlutterActivity
 
