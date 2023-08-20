@@ -10,6 +10,8 @@ class ProfileController extends GetxController {
 
   var selectedTabIndex = 0.obs;
   var isLoading = false.obs;
+  var fullName = "".obs;
+  var profilePic = "".obs;
 
   ProfileScreenResponseModel? profileScreenResponseModel;
 
@@ -24,6 +26,10 @@ class ProfileController extends GetxController {
     var response = await profileApi.getProfileScreenDetails();
     if (response.code == 200) {
       profileScreenResponseModel = response;
+      fullName.value =
+          "${profileScreenResponseModel?.userDetail?.firstname} ${profileScreenResponseModel?.userDetail?.lastname}";
+      profilePic.value =
+          "${profileScreenResponseModel?.userDetail?.profilePic}";
       isLoading.value = false;
     } else {
       isLoading.value = false;

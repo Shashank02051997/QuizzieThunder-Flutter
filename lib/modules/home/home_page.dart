@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -59,39 +60,49 @@ class HomePage extends StatelessWidget {
                                         SizedBox(
                                           height: 8,
                                         ),
-                                        Text(
-                                          "${profileController.profileScreenResponseModel?.userDetail?.firstname} ${profileController.profileScreenResponseModel?.userDetail?.lastname}",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: ThemeColor.white),
+                                        Visibility(
+                                          visible: profileController
+                                              .fullName.value.isNotNullOrEmpty,
+                                          child: Text(
+                                            "${profileController.fullName}",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: ThemeColor.white),
+                                          ),
                                         ),
                                       ],
                                     ),
-                                    CircleAvatar(
-                                      backgroundColor:
-                                          AppUtils.getRandomAvatarBgColor(),
-                                      radius: 24,
-                                      child: ClipOval(
-                                        child: CachedNetworkImage(
-                                          imageUrl:
-                                              "${profileController.profileScreenResponseModel?.userDetail?.profilePic}",
-                                          width: double.infinity,
-                                          height: double.infinity,
-                                          fit: BoxFit.cover,
-                                          placeholder: (context, url) => Center(
-                                            child: Container(
-                                              width: 20,
-                                              height: 20,
-                                              child: CircularProgressIndicator(
-                                                color: ThemeColor.accent,
+                                    Visibility(
+                                      visible: profileController
+                                          .profilePic.value.isNotNullOrEmpty,
+                                      child: CircleAvatar(
+                                        backgroundColor:
+                                            AppUtils.getRandomAvatarBgColor(),
+                                        radius: 24,
+                                        child: ClipOval(
+                                          child: CachedNetworkImage(
+                                            imageUrl:
+                                                "${profileController.profilePic}",
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            fit: BoxFit.cover,
+                                            placeholder: (context, url) =>
+                                                Center(
+                                              child: Container(
+                                                width: 20,
+                                                height: 20,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  color: ThemeColor.accent,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          errorWidget: (context, url, error) =>
-                                              Icon(
-                                            Icons.error,
-                                            color: ThemeColor.red,
+                                            errorWidget:
+                                                (context, url, error) => Icon(
+                                              Icons.error,
+                                              color: ThemeColor.red,
+                                            ),
                                           ),
                                         ),
                                       ),
