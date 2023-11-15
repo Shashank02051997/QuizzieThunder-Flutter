@@ -117,30 +117,31 @@ class HomePage extends StatelessWidget {
                                     Get.toNamed(AppRoutes.quizDetailPage,
                                         arguments: {
                                           ARG_QUIZ_DETAIL: Quiz(
-                                              id: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.id,
-                                              title: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.title,
-                                              description: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.description,
-                                              category: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.category,
-                                              createdAt: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.createdAt,
-                                              updatedAt: homeController
-                                                  .homeScreenResponseModel
-                                                  ?.mostPlayedQuiz
-                                                  ?.updatedAt)
+                                            id: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.id,
+                                            title: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.title,
+                                            description: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.description,
+                                            category: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.category,
+                                            createdAt: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.createdAt,
+                                            updatedAt: homeController
+                                                .homeScreenResponseModel
+                                                ?.mostPlayedQuiz
+                                                ?.updatedAt,
+                                          )
                                         });
                                   },
                                   child: Stack(

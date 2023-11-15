@@ -64,6 +64,7 @@ class CreateNewPasswordController extends GetxController {
         AppUtils.showSnackBar(
             response.message ??
                 "New password created successfully. Please login",
+            title: "Success",
             status: MessageStatus.SUCCESS);
       } else {
         isLoading.value = false;

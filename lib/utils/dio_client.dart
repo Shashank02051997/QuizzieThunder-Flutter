@@ -9,7 +9,7 @@ import 'error_handling_interceptor.dart';
 class DioClient {
   static Dio getDioInstance() {
     var dio = Dio(BaseOptions(
-      baseUrl: "https://quizzie-thunder-apis.onrender.com/",
+      baseUrl: BASE_URL,
       connectTimeout: Duration(minutes: 2),
       receiveTimeout: Duration(minutes: 1),
     ))

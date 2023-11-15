@@ -27,7 +27,7 @@ class LeaderboardController extends GetxController {
       isLoading.value = false;
     } else {
       isLoading.value = false;
-      AppUtils.showSnackBar("Error", status: MessageStatus.ERROR);
+      //AppUtils.showSnackBar("${response.message}",title: "", status: MessageStatus.ERROR);
     }
   }
 }

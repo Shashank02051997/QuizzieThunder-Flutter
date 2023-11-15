@@ -15,6 +15,7 @@ const KEY_IS_API_ERROR_HANDLE = "key_is_api_error_handle";
 
 // Commonly used constants
 const PAGE_LIMIT = "50";
+const BASE_URL = "https://quizzie-thunder-apis.onrender.com/";
 
 // Date and Time
 const API_DATE_FORMAT_1 = "yyyy-MM-dd HH:mm:ss";

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -162,6 +163,21 @@ class SigninPage extends StatelessWidget {
                                 ),
                               ])),
                       SizedBox(
+                        height: 16,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.forgotPasswordPage);
+                        },
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: ThemeColor.accent,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
                         height: 44,
                       ),
                       SizedBox(
@@ -185,18 +201,27 @@ class SigninPage extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.center,
-                        child: InkWell(
-                          onTap: () {
-                            Get.toNamed(AppRoutes.forgotPasswordPage);
-                          },
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: ThemeColor.accent,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
+                        child: RichText(
+                            text: TextSpan(
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
+                                children: [
+                              TextSpan(
+                                text: "Don't have the account yet? ",
+                                style: TextStyle(
+                                  color: ThemeColor.grey,
+                                ),
+                              ),
+                              TextSpan(
+                                  text: "Sign up",
+                                  style: TextStyle(
+                                      color: ThemeColor.primary,
+                                      fontWeight: FontWeight.bold),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap =
+                                        () => Get.toNamed(AppRoutes.signUpPage))
+                            ])),
                       ),
                       SizedBox(
                         height: 44,
