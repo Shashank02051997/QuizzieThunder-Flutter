@@ -21,32 +21,15 @@ Quizzie Thunder is an immersive trivia quiz app that seamlessly blends knowledge
 
 **Please click the image below to enlarge.**
 
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/c8b5b48f-6f95-4785-a9b4-f8fe7eebd474" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/e63d1b43-0b01-4bd3-9266-493dcc0ec16f" height="600" width="300" hspace="40">
+<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/cffb4ff6-741b-4180-a0c3-1c35192ed040" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/4f72b34f-728f-4850-9a7a-42f02fd022a7" height="600" width="300" hspace="40">
 
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/8cc7c17d-4e8f-46fc-ba2c-443fd1bc4c1c" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/820a7cc6-4cc4-4de2-b3fd-92599f748174" height="600" width="300" hspace="40">
+<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/f6deb352-673f-4122-b7af-f8f9c1b626d8" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/aadb967f-dae8-4559-a47a-0d8d1f6d5a60" height="600" width="300" hspace="40">
 
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/1ee420be-b259-49c5-88bf-5870615c119c" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/d5e65d5d-491c-4071-a841-51f1efc719d8" height="600" width="300" hspace="40">
+<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/5b8bd7a0-1d40-40eb-84bd-08c46de6b88b" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/e5e22cbb-9cdd-4ff1-b62e-2aa4c1d6da85" height="600" width="300" hspace="40">
 
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/63b8a069-9247-4346-9f5c-b58309a34cd1" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/39a1e711-2ab5-4866-9351-8f9ac90bce19" height="600" width="300" hspace="40">
+<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/f77293c8-855f-4e53-ba81-4479b737148d" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/19703eac-9a6f-46f6-b3e0-5e4a6958b50d" height="600" width="300" hspace="40">
 
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/525060ef-a9df-45c6-a254-a10f25c51da7" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/8a95b082-8190-4057-bd78-88828abebc20" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/a5717a84-7455-4c82-8ed5-30713258a5f6" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/3cd5ce62-2eb4-48d4-9e27-54c56520b89f" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/07becc50-a91e-4288-b75c-feb21314965c" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/5098a9dd-bac4-4e9e-a3db-b7d1dbcf07da" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/285b8876-2897-46a5-8097-d72ae6c151a2" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/90a0625b-753c-42f2-88b0-d20a80d3f96d" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/ff769c9b-6b08-4402-acbc-2820346e7c74" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/a6283378-ad48-4e85-b93e-6639492ca26c" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/7de3bf90-928a-4f87-9b14-cc84dce3a0ec" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/afb78d02-4060-405d-acb1-99025dba6146" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/d768722e-3a3b-4e26-938e-5ec6b6a21f3e" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/853e5c96-90bb-4e52-bec0-98434f6e480d" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/0559eec5-4523-40b4-b267-db9fc702eb2a" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/9a822872-6fd6-4078-add0-97cb8951e46f" height="600" width="300" hspace="40">
-
-<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/e2994746-d21f-45f3-a209-a711c90240e8" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/003b008b-23c9-4115-bbcf-454fa3f2120f" height="600" width="300" hspace="40">
-
+<img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/752ae8ef-b83f-4408-8a92-42545b1544b0" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/dfb7796e-0aaf-4af5-b64d-138822e7e9f8" height="600" width="300" hspace="40">
 
 ## ✨ Requirements
 
