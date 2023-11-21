@@ -31,6 +31,11 @@ Quizzie Thunder is an immersive trivia quiz app that seamlessly blends knowledge
 
 <img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/752ae8ef-b83f-4408-8a92-42545b1544b0" height="600" width="300" hspace="40"><img src="https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/dfb7796e-0aaf-4af5-b64d-138822e7e9f8" height="600" width="300" hspace="40">
 
+## App Demo
+
+https://github.com/Shashank02051997/QuizzieThunder-Flutter/assets/20399094/0741245f-ef4c-4e7b-a83a-be666ed93a3f
+
+
 ## ✨ Requirements
 
 * Any Operating System (ie. MacOS X, Linux, Windows)
