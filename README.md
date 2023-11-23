@@ -69,6 +69,12 @@ If this project helps you reduce time to develop, you can give me a cup of coffe
 
 Have any questions, or doubts or want to present your opinions or views? You're always welcome. You can [start discussions](https://github.com/Shashank02051997/QuizzieThunder-Flutter/discussions).
 
+## Links
+
+- [Link to React GitHub repository](https://github.com/Shashank02051997/QuizzieThunder-ReactJs)
+- [Link to Node GitHub repository](https://github.com/Shashank02051997/QuizzieThunder-NodeJs)
+
+
 # Flutter Code Execution Guide
 
 This guide provides step-by-step instructions on how to run Flutter code on your local machine. Flutter is an open-source framework developed by Google for building cross-platform applications. Before you begin, ensure that you have Flutter SDK installed on your system.
