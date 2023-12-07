@@ -7,7 +7,7 @@ class QuizResultApi {
       {required QuizResultPostBodyModel quizResultPostBodyModel}) async {
     try {
       final response = await DioClient.getDioInstance().put(
-          "api/submit-quiz-result",
+          "api/quiz/result/submit-quiz-result",
           data: quizResultPostBodyModel.toJson());
       return QuizResultResponseModel.fromJson(response.data);
     } catch (e) {
