@@ -1,5 +1,11 @@
 name: Creating a build for Android & iOS App
-on: [push]
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build_android:
