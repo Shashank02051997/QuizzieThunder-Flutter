@@ -1,4 +1,4 @@
-name: Creating build for Android & iOS App
+name: Creating a build for Android & iOS App
 on: [push]
 
 jobs:
@@ -15,10 +15,22 @@ jobs:
       - run: flutter --version
       - name: Get dependencies
         run: flutter pub get
+      - name: Run tests
+        run: flutter test
       - name: Build APK
         run: flutter build apk
       - name: Build App Bundle
         run: flutter build appbundle
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Upload App Bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: app.aab
+          path: build/app/outputs/bundle/release/app-release.aab
 
   build_ios:
     runs-on: macos-latest
@@ -33,5 +45,12 @@ jobs:
       - run: flutter --version
       - name: Get dependencies
         run: flutter pub get
+      - name: Run tests
+        run: flutter test
       - name: Build iOS
         run: flutter build ios --release --no-codesign
+      - name: Upload iOS app
+        uses: actions/upload-artifact@v2
+        with:
+          name: Runner.app
+          path: build/ios/iphoneos/Runner.app
