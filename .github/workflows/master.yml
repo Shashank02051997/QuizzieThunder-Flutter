@@ -1,8 +1,8 @@
-name: CI
+name: Creating build for Android & iOS App
 on: [push]
 
 jobs:
-  build:
+  build_android:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
@@ -13,3 +13,25 @@ jobs:
           channel: stable
           flutter-version: 3.19.0
       - run: flutter --version
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build APK
+        run: flutter build apk
+      - name: Build App Bundle
+        run: flutter build appbundle
+
+  build_ios:
+    runs-on: macos-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.19.0
+      - run: flutter --version
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build iOS
+        run: flutter build ios --release --no-codesign
